@@ -16,21 +16,23 @@ import javax.persistence.*;
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    @Column(name = "clientId")
+    private Long clientId;
 
     private String name;
     private String address;
     private String clientCity;
     private String phone;
     private String email;
+
     @ManyToOne
-    @JoinColumn(name = "cityId", insertable = false, updatable = false)
+    @JoinColumn(name = "city_id", insertable = false, updatable = false)
     private City city;
-    private Long cityId;
+    private Long cityid;
+
     @ManyToOne
-    @JoinColumn(name = "cityRegionId")
+    @JoinColumn(name = "city_region_id", insertable = false, updatable = false)
     private CityRegion cityRegion;
-    private Long cityRegionId;
+    private Long cityregionid;
 
 }

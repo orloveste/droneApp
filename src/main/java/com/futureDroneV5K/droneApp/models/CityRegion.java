@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class CityRegion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long cityregionid;
     private String cityRegionName;
     private String cityRegionStreetPostalCode;
 
