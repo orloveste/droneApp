@@ -5,10 +5,10 @@ import com.futureDroneV5K.droneApp.services.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class CityController {
@@ -27,4 +27,17 @@ public class CityController {
         cityService.saveCity(city);
         return "redirect:/cities";
     }
+
+    @RequestMapping("/cities/findById")
+    @ResponseBody
+    public Optional<City> findById(Long id){
+        return cityService.findById(id);
+    }
+
+    @RequestMapping(value = "/cities/update", method = {RequestMethod.PUT, RequestMethod.GET})
+    public String update(City city){
+        cityService.saveCity(city);
+        return "redirect:/cities";
+    }
+
 }
