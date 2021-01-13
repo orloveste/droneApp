@@ -18,9 +18,9 @@ public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cityid;
-    private String cityPostalCode;
-    private String cityName;
-    private String cityDescription;
+    private String citypostalcode;
+    private String cityname;
+    private String citydescription;
 
     @OneToMany(mappedBy = "city")
     private List<CityRegion> cityRegionList;

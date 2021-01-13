@@ -400,7 +400,27 @@
           </div>
         </div>
         <!-- page start-->
-          <h1>testing page</h1>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">add new city</button>
+
+
+          <table class="table">
+              <thead>
+              <tr>
+                  <th>cityid</th>
+                  <th>city description</th>
+                  <th>city Name</th>
+                  <th>city postal code</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="city:${cities}">
+                  <td th:text="${city.cityid}"></td>
+                  <td th:text="${city.citydescription}"></td>
+                  <td th:text="${city.cityname}"></td>
+                  <td th:text="${city.citypostalcode}"></td>
+              </tr>
+              </tbody>
+          </table>
         <!-- page end-->
       </section>
     </section>
@@ -418,6 +438,43 @@
     </div>
   </section>
   <!-- container section end -->
+  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <form th:action="@{/cities/addNew}" method="post">
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">city description</label>
+                          <input type="text" class="form-control" id="recipient-name" name="citydescription">
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">city name</label>
+                          <input type="text" class="form-control" id="recipient-name" name="cityname">
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">city postal code</label>
+                          <input type="text" class="form-control" id="recipient-name" name="citypostalcode">
+                      </div>
+                      <div class="form-group">
+                          <button type="submit" class="btn btn-primary">submit</button>
+                      </div>
+
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+              </div>
+          </div>
+      </div>
+  </div>
+
   <!-- javascripts -->
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>

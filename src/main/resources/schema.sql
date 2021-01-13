@@ -1,0 +1,1 @@
+insert into droneappdb.city values (1, 'Bucharest', 'Bucharest', 021052), (2, 'district 2', 'Bucharest', 021052), (3, 'district 3', 'Bucharest', 021053);
