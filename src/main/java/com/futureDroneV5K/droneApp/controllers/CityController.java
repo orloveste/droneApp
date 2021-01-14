@@ -29,14 +29,17 @@ public class CityController {
     }
     @RequestMapping("cities/findById")
     @ResponseBody
-    public Optional<City> findById(long id){
+    public Optional<City> findById(Long id){
         return cityService.findById(id);
     }
-
-
-//    @RequestMapping("/cities/findById")
-//    @ResponseBody
-//    public Optional<City> findById(Long id){
-//        return cityService.findById(id);
-//    }
+    @RequestMapping(value="/cities/update", method={RequestMethod.PUT, RequestMethod.GET})
+    public String update(City city){
+        cityService.saveCity(city);
+        return "redirect:/cities";
+    }
+    @RequestMapping(value="/cities/delete", method={RequestMethod.DELETE, RequestMethod.GET})
+    public String delete(Long id){
+        cityService.delete(id);
+        return "redirect:/cities";
+    }
 }

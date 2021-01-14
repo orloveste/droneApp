@@ -22,6 +22,6 @@ public class City {
     private String cityname;
     private String citydescription;
 
-//    @OneToMany(mappedBy = "city")
-//    private List<CityRegion> cityRegionList;
+    @OneToMany(mappedBy = "city")
+    private List<CityRegion> cityRegionList;
 }

@@ -22,7 +22,11 @@ public class CityService {
         cityRepository.saveAndFlush(city);
     }
 //    getById
-    public Optional<City> findById(long id){//daca nu gaseste ce trebuie merge mai departe
+    public Optional<City> findById(Long id){//daca nu gaseste ce trebuie merge mai departe
         return cityRepository.findById(id);
+    }
+
+    public void delete(Long id) {
+        cityRepository.deleteById(id);
     }
 }

@@ -419,8 +419,10 @@
                   <td th:text="${city.citypostalcode}"></td>
                   <td>
                       <div class="btn-group">
-                          <a
-                             class="btn btn-primary" id="editButton">Edit</a>
+                          <a th:href="@{/cities/findById/(id=${city.cityid})}"
+                                  class="btn btn-primary" id="editButton">Edit</a>
+                          <a th:href="@{/cities/delete/(id=${city.cityid})}"
+                             class="btn btn-danger" id="deleteButton">Delete</a>
                       </div>
                   </td>
               </tr>
@@ -484,24 +486,28 @@
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Update City data</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Update CityData</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
               <div class="modal-body">
-                  <form th:action="@{/cities/addNew}" method="post">
+                  <form th:action="@{/cities/update}" method="put">
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">our Id</label>
+                          <input type="text" class="form-control" id="cityidEdit" name="cityid" readonly>
+                      </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">city description</label>
-                          <input type="text" class="form-control" id="recipient-name" name="citydescription">
+                          <input type="text" class="form-control" id="citydescriptionEdit" name="citydescription">
                       </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">city name</label>
-                          <input type="text" class="form-control" id="recipient-name" name="cityname">
+                          <input type="text" class="form-control" id="citynameEdit" name="cityname">
                       </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">city postal code</label>
-                          <input type="text" class="form-control" id="recipient-name" name="citypostalcode">
+                          <input type="text" class="form-control" id="citypostalcodeEdit" name="citypostalcode">
                       </div>
                       <div class="form-group">
                           <button type="submit" class="btn btn-primary">submit</button>
@@ -517,6 +523,25 @@
       </div>
   </div>
 
+  <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">conform delete</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <p>esti sigur ca nu arde?</p>
+              </div>
+              <div class="modal-footer">
+                  <a class="btn btn-primary" id="confirmDeleteButton" href="">Save changes - delete</a>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel action</button>
+              </div>
+          </div>
+      </div>
+  </div>
 
   <!-- javascripts -->
   <script src="js/jquery.js"></script>

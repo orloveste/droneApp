@@ -1,13 +1,21 @@
 
 $('document').ready(function(){
-    $('table #editButton').on('click', function(event){
-        // var herf = $(this).attr('href')
+    $('table #editButton').on('click',function(event){
+        event.preventDefault();
+        // var herf = $(this).attr('href');
+        //
         // $.get(href, function(city, status){
-        //     $('#idEdit').val(city.cityid);
+        //     $('#cityidEdit').val(city.cityid);
         //     $('#citynameEdit').val(city.cityname);
         //     $('#citypostalcodeEdit').val(city.citypostalcode);
         // });
         $('#editModal').modal();
+    });
+    $('table #deleteButton').on('click', function(event){
+        event.preventDefault();
+        var href = $(this).attr('href');
+        $('#confirmDeleteButton').attr('href', href);
+        $('#deleteModal').modal();
     });
 });
 // event.preventDefault();
