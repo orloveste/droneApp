@@ -32,8 +32,7 @@ public class CityController {
     public Optional<City> findById(Long id){
         return cityService.findById(id);
     }
-    @RequestMapping(value="/cities/update",
-            method={RequestMethod.PUT, RequestMethod.GET})
+    @RequestMapping(value="/cities/update", method= {RequestMethod.PUT, RequestMethod.GET})
     public String update(City city){
 //        cityService.findById(id);
         cityService.saveCity(city);

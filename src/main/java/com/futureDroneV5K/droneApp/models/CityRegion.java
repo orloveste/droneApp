@@ -17,12 +17,12 @@ public class CityRegion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cityregionid;
-    private String cityRegionName;
-    private String cityRegionStreetPostalCode;
+    private String cityregionname;
+    private String cityregionstreetpostalcode;
 
     @ManyToOne
-    @JoinColumn(name = "cityId", insertable = false, updatable = false)
+    @JoinColumn(name = "cityid", insertable = false, updatable = false)
     private City city;
-    private Long cityId;
+    private Long cityid;
     private String details;
 }
