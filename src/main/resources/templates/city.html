@@ -311,9 +311,9 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="">
-            <a class="" href="index.html">
+            <a class="" href="/index">
                           <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
+                          <span>Home page</span>
                       </a>
           </li>
           <li class="sub-menu">
@@ -419,8 +419,8 @@
                   <td th:text="${city.citypostalcode}"></td>
                   <td>
                       <div class="btn-group">
-                          <a th:href="@{/cities/findById/(id=${city.cityid})}"
-                                  class="btn btn-primary" id="editButton">Edit</a>
+                          <a th:href="@{/cities/findById/(id=${city.cityid})}" class="btn btn-primary" id="editButton">Edit</a>
+                          <a th:href="@{/cities/findById/(id=${city.cityid})}" class="btn btn-info" id="detailsButton"><i class="icon_document_alt"></i></a>
                           <a th:href="@{/cities/delete/(id=${city.cityid})}"
                              class="btn btn-danger" id="deleteButton">Delete</a>
                       </div>
@@ -516,6 +516,7 @@
                   </form>
               </div>
               <div class="modal-footer">
+<!--                  <a class="btn btn-primary" id="confirmUpdateButton" href="">Save changes - update</a>-->
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
               </div>
@@ -527,7 +528,7 @@
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title">conform delete</h5>
+                  <h5 class="modal-title">confirm delete</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>

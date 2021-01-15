@@ -21,6 +21,10 @@ public class CityService {
     public void saveCity(City city){
         cityRepository.saveAndFlush(city);
     }
+//    //update?
+//    public void updateCity(City city){
+//        cityRepository.saveAndFlush(city);
+//    }
 //    getById
     public Optional<City> findById(Long id){//daca nu gaseste ce trebuie merge mai departe
         return cityRepository.findById(id);
