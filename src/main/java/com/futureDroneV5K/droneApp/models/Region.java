@@ -12,13 +12,13 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class CityRegion {
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "regionid")
+public class Region {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cityregionid;
-    private String cityregionname;
-    private String cityregionstreetpostalcode;
+    private Long regionid;
+    private String regionname;
+    private String regionstreetpostalcode;
 
     @ManyToOne
     @JoinColumn(name = "cityid", insertable = false, updatable = false)

@@ -12,27 +12,27 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "clientid")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "clientId")
-    private Long clientId;
+    @Column(name = "clientid")
+    private Long clientid;
 
     private String name;
     private String address;
-    private String clientCity;
+    private String clientcity;
     private String phone;
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "city_id", insertable = false, updatable = false)
+    @JoinColumn(name = "cityid", insertable = false, updatable = false)
     private City city;
     private Long cityid;
 
     @ManyToOne
-    @JoinColumn(name = "city_region_id", insertable = false, updatable = false)
-    private CityRegion cityRegion;
-    private Long cityregionid;
+    @JoinColumn(name = "regionid", insertable = false, updatable = false)
+    private Region Region;
+    private Long regionid;
 
 }

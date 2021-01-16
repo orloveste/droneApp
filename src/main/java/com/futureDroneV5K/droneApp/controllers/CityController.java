@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class CityController {
@@ -27,16 +26,14 @@ public class CityController {
         cityService.saveCity(city);
         return "redirect:/cities";
     }
-    @RequestMapping("cities/findById")
+    @RequestMapping(value = "cities/findById", method = RequestMethod.GET)
     @ResponseBody
-    public Optional<City> findById(Long id){
+    public City findById(Long id){
         return cityService.findById(id);
     }
     @RequestMapping(value="/cities/update", method= {RequestMethod.PUT, RequestMethod.GET})
     public String update(City city){
-//        cityService.findById(id);
         cityService.saveCity(city);
-//        cityService.updateCity(city);
         return "redirect:/cities";
     }
     @RequestMapping(value="/cities/delete",

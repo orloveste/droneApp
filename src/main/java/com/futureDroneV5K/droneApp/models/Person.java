@@ -19,16 +19,20 @@ public class Person {
     private String firstName;
     private String LastName;
     private String gender;
+
     @ManyToOne
-    @JoinColumn(name = "cityId", insertable = false, updatable = false)
+    @JoinColumn(name = "cityid", insertable = false, updatable = false)
     private City city;
-    private Long cityId;
+    private Long cityid;
+
     @ManyToOne
-    @JoinColumn(name = "cityRegionId")
-    private CityRegion cityRegion;
-    private Long cityRegionId;
+    @JoinColumn(name = "regionid")
+    private Region region;
+    private Long regionid;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
+
     private String address;
     private String phone;
     private String email;

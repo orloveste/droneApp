@@ -13,19 +13,19 @@ import javax.persistence.*;
 public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "colationid")
     private Long locationId;
 
     private String description;
     private String details;
     @ManyToOne
-    @JoinColumn(name = "cityId", insertable = false, updatable = false)
+    @JoinColumn(name = "cityid", insertable = false, updatable = false)
     private City city;
-    private Long cityId;
+    private Long cityid;
     @ManyToOne
-    @JoinColumn(name = "cityRegionId", insertable = false, updatable = false)
-    private CityRegion cityRegion;
-    private Long  cityRegionId;
+    @JoinColumn(name = "regionid", insertable = false, updatable = false)
+    private Region region;
+    private Long  regionid;
     private String address;
 
 }

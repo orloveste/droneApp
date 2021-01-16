@@ -12,14 +12,14 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "droneid")
 public class Drone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "drone_id")
-    private Long droneId;
+    @Column(name= "droneid")
+    private Long droneid;
 
-    private String droneName;
+    private String dronename;
 
 
 }

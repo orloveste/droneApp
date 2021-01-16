@@ -23,5 +23,5 @@ public class City {
     private String citydescription;
 
     @OneToMany(mappedBy = "city")
-    private List<CityRegion> cityRegionList;
+    private List<Region> cityRegionList;
 }

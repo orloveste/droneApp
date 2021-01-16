@@ -9,7 +9,7 @@
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Blank | Creative - Bootstrap 3 Responsive Admin Template</title>
+  <title>Region page</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -311,9 +311,9 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="">
-            <a class="" href="index.html">
+            <a class="" href="/index">
                           <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
+                          <span>Home page</span>
                       </a>
           </li>
           <li class="sub-menu">
@@ -400,30 +400,27 @@
           </div>
         </div>
         <!-- page start-->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">add new cityRegion</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">add new region</button>
           <table class="table">
               <thead>
               <tr>
-                  <th>cityRegionid</th>
-                  <th>cityRegion Name</th>
-                  <th>cityRegion street/road postal code</th>
-                  <th>details</th>
+                  <th>refionid</th>
+                  <th>region details</th>
+                  <th>region street postal</th>
                   <th>Actions</th>
               </tr>
               </thead>
               <tbody>
-              <tr th:each="cityRegion: ${cityRegions}">
-                  <td th:text="${cityRegion.cityregionid}"></td>
-                  <td th:text="${cityRegion.cityregionname}"></td>
-                  <td th:text="${cityRegion.cityregionstreetpostalcode}"></td>
-<!--                  <td th:text="${city.cityname}"></td>-->
-
-                  <td th:text="${cityRegion.details}"></td>
+              <tr th:each="region:${regions}">
+                  <td th:text="${region.regionid}"></td>
+                  <td th:text="${region.details}"></td>
+                  <td th:text="${region.regionname}"></td>
+                  <td th:text="${region.regionstreetpostalcode}"></td>
                   <td>
                       <div class="btn-group">
-                          <a th:href="@{/cityRegions/findById/(id=${cityRegion.cityregionid})}" class="btn btn-primary" id="editButton">Edit</a>
-                          <a th:href="@{/cityRegions/findById/(id=${cityRegion.cityregionid})}" class="btn btn-info" id="detailsButton"><i class="icon_document_alt"></i></a>
-                          <a th:href="@{/cityRegions/delete/(id=${cityRegion.cityregionid})}" class="btn btn-danger" id="deleteButton">Delete</a>
+                          <a th:href="@{/regions/findById/(id=${region.regionid})}" class="btn btn-primary" id="editButton">Edit</a>
+                          <a th:href="@{/regions/findById/(id=${region.regionid})}" class="btn btn-info" id="detailsButton"><i class="icon_document_alt"></i></a>
+                          <a th:href="@{/regions/delete/(id=${region.regionid})}" class="btn btn-danger" id="deleteButton">Delete</a>
                       </div>
                   </td>
               </tr>
@@ -446,28 +443,28 @@
     </div>
   </section>
   <!-- container section end -->
-  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="addModalLabel">New Region of city</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">New region</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
               <div class="modal-body">
-                  <form th:action="@{/cityRegions/addNew}" method="post">
+                  <form th:action="@{/regions/addNew}" method="post">
                       <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">city region name</label>
-                          <input type="text" class="form-control" id="recipient-name" name="cityregionname">
-                      </div>
-                      <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">road postal code name</label>
-                          <input type="text" class="form-control" id="recipient-name" name="cityregionstreetpostalcode">
-                      </div>
-                      <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">details - other</label>
+                          <label for="recipient-name" class="col-form-label">region details</label>
                           <input type="text" class="form-control" id="recipient-name" name="details">
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">region name</label>
+                          <input type="text" class="form-control" id="recipient-name" name="regionname">
+                      </div>
+                      <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">region street postal code</label>
+                          <input type="text" class="form-control" id="recipient-name" name="regionstreetpostalcode">
                       </div>
                       <div class="form-group">
                           <button type="submit" class="btn btn-primary">submit</button>
@@ -483,48 +480,38 @@
       </div>
   </div>
 
-  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-                        <form th:action="@{/cityRegions/update}" method="put">
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="editModalLabel">Update CityRegion Data</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Update region Data</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                   </button>
               </div>
               <div class="modal-body">
-
+                  <form th:action="@{/regions/update}" method="put">
                       <div class="form-group">
-                          <label for="cityregionidEdit" class="col-form-label">our Id</label>
-                          <input type="text" class="form-control" id="cityregionidEdit" name="cityregionid" readonly>
-                      </div>```
-
-<!--                  <div class="form-group">-->
-<!--                      <label for="ddlCityDetail" class="col-form-label">City: </label>-->
-<!--                      <select class="form-control" id="ddlCityDetail" name="cityid" readonly>-->
-<!--                          <option>SELECT</option>-->
-<!--                          <option th:each="city : ${cities}"-->
-<!--                                  th:value="${city.cityid}"-->
-<!--                                  th:text="${city.citydescription}"></option>-->
-<!--                      </select>-->
-<!--                  </div>-->
-                      <div class="form-group">
-                          <label for="cityregionnameEdit" class="col-form-label">cityRegion Name</label>
-                          <input type="text" class="form-control" id="cityregionnameEdit" name="cityregionname">
+                          <label for="regionidEdit" class="col-form-label">our region Id</label>
+                          <input type="text" class="form-control" id="regionidEdit" name="regionid" readonly>
                       </div>
                       <div class="form-group">
-                          <label for="cityregionstreetpostalcodeEdit" class="col-form-label">city name</label>
-                          <input type="text" class="form-control" id="cityregionstreetpostalcodeEdit" name="cityregionstreetpostalcode">
+                          <label for="regiondetailsEdit" class="col-form-label">region details</label>
+                          <input type="text" class="form-control" id="regiondetailsEdit" name="details">
                       </div>
                       <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">city postal code</label>
-                          <input type="text" class="form-control" id="detailsEdit" name="details">
+                          <label for="regionnameEdit" class="col-form-label">region name</label>
+                          <input type="text" class="form-control" id="regionnameEdit" name="regionname">
+                      </div>
+                      <div class="form-group">
+                          <label for="regionstreetpostalcodeEdit" class="col-form-label">region street postal code</label>
+                          <input type="text" class="form-control" id="regionstreetpostalcodeEdit" name="regionstreetpostalcode">
                       </div>
                       <div class="form-group">
                           <button type="submit" class="btn btn-primary">submit</button>
                       </div>
 
+                  </form>
               </div>
               <div class="modal-footer">
                   <!--                  <a class="btn btn-primary" id="confirmUpdateButton" href="">Save changes - update</a>-->
@@ -533,7 +520,44 @@
               </div>
           </div>
       </div>
-                        </form>
+  </div>
+  <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">detail region Data</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <form th:action="@{/regions/detail}" method="get">
+                      <div class="form-group">
+                          <label for="regionidDetail" class="col-form-label">our region Id</label>
+                          <input type="text" class="form-control" id="regionidDetail" name="regionid" readonly>
+                      </div>
+                      <div class="form-group">
+                          <label for="regiondetailsDetail" class="col-form-label">region details</label>
+                          <input type="text" class="form-control" id="regiondetailsDetail" name="details">
+                      </div>
+                      <div class="form-group">
+                          <label for="regionnameDetail" class="col-form-label">region name</label>
+                          <input type="text" class="form-control" id="regionnameDetail" name="regionname">
+                      </div>
+                      <div class="form-group">
+                          <label for="regionstreetpostalcodeDetail" class="col-form-label">city postal code</label>
+                          <input type="text" class="form-control" id="regionstreetpostalcodeDetail" name="regionstreetpostalcode">
+                      </div>
+
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <!--                  <a class="btn btn-primary" id="confirmUpdateButton" href="">Save changes - update</a>-->
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+              </div>
+          </div>
+      </div>
   </div>
 
   <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
@@ -564,8 +588,9 @@
   <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
   <!--custome script for all page-->
   <script src="js/scripts.js"></script>
-  <script src="js/cityRegion.js"></script>
+  <script src="js/region.js"></script>
 
 
 </body>
+
 </html>
