@@ -419,8 +419,10 @@
                   <td th:text="${city.citypostalcode}"></td>
                   <td>
                       <div class="btn-group">
-                          <a th:href="@{/cities/findById/(id=${city.cityid})}" class="btn btn-primary" id="editButton">Edit</a>
-                          <a th:href="@{/cities/findById/(id=${city.cityid})}" class="btn btn-info" id="detailsButton"><i class="icon_document_alt"></i></a>
+                          <a th:href="@{/cities/findById/(id=${city.cityid})}"
+                             class="btn btn-primary" id="editButton">Edit</a>
+                          <a th:href="@{/cities/findById/(id=${city.cityid})}"
+                             class="btn btn-info" id="detailsButton"><i class="icon_document_alt"></i></a>
                           <a th:href="@{/cities/delete/(id=${city.cityid})}"
                              class="btn btn-danger" id="deleteButton">Delete</a>
                       </div>
@@ -481,7 +483,6 @@
           </div>
       </div>
   </div>
-
   <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -561,7 +562,6 @@
           </div>
       </div>
   </div>
-
   <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -572,7 +572,7 @@
                   </button>
               </div>
               <div class="modal-body">
-                  <p>esti sigur ca nu arde?</p>
+                  <p>esti sigur ca nu arde daca stergi clientul?</p>
               </div>
               <div class="modal-footer">
                   <a class="btn btn-primary" id="confirmDeleteButton" href="">Save changes - delete</a>
@@ -591,7 +591,6 @@
   <!--custome script for all page-->
   <script src="js/scripts.js"></script>
   <script src="js/city.js"></script>
-
 
 
 </body>

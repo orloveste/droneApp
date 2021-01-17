@@ -26,12 +26,14 @@ public class CityController {
         cityService.saveCity(city);
         return "redirect:/cities";
     }
-    @RequestMapping(value = "cities/findById", method = RequestMethod.GET)
+    @RequestMapping(value = "/cities/findById",
+            method = RequestMethod.GET)
     @ResponseBody
     public City findById(Long id){
         return cityService.findById(id);
     }
-    @RequestMapping(value="/cities/update", method= {RequestMethod.PUT, RequestMethod.GET})
+    @RequestMapping(value="/cities/update",
+            method= {RequestMethod.PUT, RequestMethod.GET})
     public String update(City city){
         cityService.saveCity(city);
         return "redirect:/cities";

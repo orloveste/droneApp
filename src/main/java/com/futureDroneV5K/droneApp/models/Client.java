@@ -32,7 +32,6 @@ public class Client {
 
     @ManyToOne
     @JoinColumn(name = "regionid", insertable = false, updatable = false)
-    private Region Region;
+    private Region region;
     private Long regionid;
-
 }
