@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class DroneController {
     @GetMapping("/drones")
     public String getDrones() {
-        return "drones";
+        return "drone";
     }
 }

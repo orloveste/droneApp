@@ -13,8 +13,8 @@ import javax.persistence.*;
 public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "colationid")
-    private Long locationId;
+    @Column(name = "locationid")//?ha
+    private Long locationid;
 
     private String description;
     private String details;
@@ -22,10 +22,11 @@ public class Location {
     @JoinColumn(name = "cityid", insertable = false, updatable = false)
     private City city;
     private Long cityid;
+    private String cityname;
     @ManyToOne
     @JoinColumn(name = "regionid", insertable = false, updatable = false)
     private Region region;
     private Long  regionid;
-    private String address;
+    private String regionname;
 
 }
