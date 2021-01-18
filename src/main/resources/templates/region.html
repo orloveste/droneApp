@@ -405,7 +405,7 @@
               <thead>
               <tr>
                   <th>refionid</th>
-                  <th>region details</th>
+                  <th>region name</th>
                   <th>region street postal</th>
                   <th>Actions</th>
               </tr>
@@ -413,7 +413,6 @@
               <tbody>
               <tr th:each="region:${regions}">
                   <td th:text="${region.regionid}"></td>
-                  <td th:text="${region.details}"></td>
                   <td th:text="${region.regionname}"></td>
                   <td th:text="${region.regionstreetpostalcode}"></td>
                   <td>
@@ -455,12 +454,19 @@
               <div class="modal-body">
                   <form th:action="@{/regions/addNew}" method="post">
                       <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">region details</label>
-                          <input type="text" class="form-control" id="recipient-name" name="details">
-                      </div>
-                      <div class="form-group">
                           <label for="recipient-name" class="col-form-label">region name</label>
                           <input type="text" class="form-control" id="recipient-name" name="regionname">
+                      </div>
+                      <div class="form-group">
+                          <label for="dllCityAdd" class="col-form-label">City: </label>
+
+                          <select class="form-control" id="dllCityAdd" name="cityid">
+                              <option>SELECT</option>
+                              <option th:each="city: ${cities}"
+                                      th:value="${city.cityid}"
+                                      th:text="${city.citydescription}">
+                              </option>
+                          </select>
                       </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">region street postal code</label>
@@ -495,13 +501,16 @@
                           <label for="regionidEdit" class="col-form-label">our region Id</label>
                           <input type="text" class="form-control" id="regionidEdit" name="regionid" readonly>
                       </div>
-<!--                      <div class="form-group">-->
-<!--                          <label for="regionidEdit" class="col-form-label">Localitate valabila pentru  aceasta regiune</label>-->
-<!--                          <input type="text" class="form-control" id="regionidEdit" name="regionid" readonly>-->
-<!--                      </div>-->
                       <div class="form-group">
-                          <label for="regiondetailsEdit" class="col-form-label">region details</label>
-                          <input type="text" class="form-control" id="regiondetailsEdit" name="details">
+                          <label for="dllCityEdit" class="col-form-label">City: </label>
+
+                          <select class="form-control" id="dllCityEdit" name="cityid">
+                              <option>SELECT</option>
+                              <option th:each="city: ${cities}"
+                              th:value="${city.cityid}"
+                              th:text="${city.citydescription}">
+                              </option>
+                          </select>
                       </div>
                       <div class="form-group">
                           <label for="regionnameEdit" class="col-form-label">region name</label>
@@ -541,8 +550,15 @@
                           <input type="text" class="form-control" id="regionidDetail" name="regionid" readonly>
                       </div>
                       <div class="form-group">
-                          <label for="regiondetailsDetail" class="col-form-label">region details</label>
-                          <input type="text" class="form-control" id="regiondetailsDetail" name="details">
+                          <label for="dllCityDetail" class="col-form-label">City: </label>
+
+                          <select class="form-control" id="dllCityDetail" name="cityid">
+                              <option>SELECT</option>
+                              <option th:each="city: ${cities}"
+                                      th:value="${city.cityid}"
+                                      th:text="${city.citydescription}">
+                              </option>
+                          </select>
                       </div>
                       <div class="form-group">
                           <label for="regionnameDetail" class="col-form-label">region name</label>

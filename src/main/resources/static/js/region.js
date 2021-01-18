@@ -4,7 +4,7 @@ $('document').ready(function(){
         var href=$(this).attr('href');
         $.get(href, function(region, status){
             $('#regionidEdit').val(region.regionid);
-            $('#regiondetailsEdit').val(region.details);
+            $('#dllCityEdit').val(region.cityid);
             $('#regionnameEdit').val(region.regionname);
             $('#regionstreetpostalcodeEdit').val(region.regionstreetpostalcode);
         });
@@ -15,7 +15,7 @@ $('document').ready(function(){
         var href=$(this).attr('href');
         $.get(href, function(region, status){
             $('#regionidDetail').val(region.regionid);
-            $('#regiondetailsDetail').val(region.details);
+            $('#dllCityDetail').val(region.cityid);
             $('#regionnameDetail').val(region.regionname);
             $('#regionstreetpostalcodeDetail').val(region.regionstreetpostalcode);
         });

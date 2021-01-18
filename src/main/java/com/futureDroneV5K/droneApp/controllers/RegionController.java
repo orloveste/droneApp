@@ -1,6 +1,8 @@
 package com.futureDroneV5K.droneApp.controllers;
 
+import com.futureDroneV5K.droneApp.models.City;
 import com.futureDroneV5K.droneApp.models.Region;
+import com.futureDroneV5K.droneApp.services.CityService;
 import com.futureDroneV5K.droneApp.services.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,11 +17,18 @@ public class RegionController {
 
     @Autowired
     private RegionService regionService;
+    @Autowired
+    private CityService cityService;
+
 
     @GetMapping("/regions")
     public String getRegion(Model model) {
-        List<Region> RegionList = regionService.getRegions();
-        model.addAttribute("regions", RegionList);
+        List<Region> regionList = regionService.getRegions();
+        model.addAttribute("regions", regionList);
+
+        List<City> cityList = cityService.getCity();
+        model.addAttribute("cities", cityList);
+
         return "Region";
     }
     @PostMapping("/regions/addNew")
