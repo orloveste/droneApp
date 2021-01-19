@@ -24,5 +24,5 @@ public class Region {
     @JoinColumn(name = "cityid", insertable = false, updatable = false)
     private City city;
     private Long cityid;
-    private String details;
+    private String cityname;
 }
