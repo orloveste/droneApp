@@ -455,6 +455,7 @@
   </section>
   <!-- container section end -->
   <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <form th:action="@{/clients/addNew}" method="post">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
               <div class="modal-header">
@@ -464,39 +465,47 @@
                   </button>
               </div>
               <div class="modal-body">
-                  <form th:action="@{/clients/addNew}" method="post">
-                      <div class="form-group">
-                          <label for="nameAdd" class="col-form-label">client name</label>
-                          <input type="text" class="form-control" id="nameAdd" name="name">
-                      </div>
-                      <div class="form-group">
-                          <label for="addressAdd" class="col-form-label">client address</label>
-                          <input type="text" class="form-control" id="addressAdd" name="address">
-                      </div>
-                      <div class="form-group">
-                          <label for="clientcityAdd" class="col-form-label">client city</label>
-                          <input type="text" class="form-control" id="clientcityAdd" name="clientcity">
-                      </div>
-                      <div class="form-group">
-                          <label for="phoneAdd" class="col-form-label">phone</label>
-                          <input type="text" class="form-control" id="phoneAdd" name="phone">
-                      </div>
-                      <div class="form-group">
-                          <label for="emailAdd" class="col-form-label">email</label>
-                          <input type="text" class="form-control" id="emailAdd" name="email">
-                      </div>
-                      <div class="form-group">
-                          <button type="submit" class="btn btn-primary">submit</button>
-                      </div>
+                  <form>
+                      <table width="100%">
+                          <tr>
+                              <td width="50%">
+                                  <div class="form-group">
+                                      <label for="nameAdd" class="col-form-label">client name</label>
+                                      <input type="text" class="form-control" id="nameAdd" name="name">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="addressAdd" class="col-form-label">client address</label>
+                                      <input type="text" class="form-control" id="addressAdd" name="address">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="clientcityAdd" class="col-form-label">client city</label>
+                                      <input type="text" class="form-control" id="clientcityAdd" name="clientcity">
+                                  </div>
+                              </td>
+                              <td width="50%">
+                                  <div class="form-group">
+                                      <label for="phoneAdd" class="col-form-label">phone</label>
+                                      <input type="text" class="form-control" id="phoneAdd" name="phone">
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="emailAdd" class="col-form-label">email</label>
+                                      <input type="email" class="form-control" id="emailAdd" name="email" placeholder="Email">
+                                  </div>
+                                  <div class="form-group">
+                                      <button type="submit" class="btn btn-primary">submit</button>
+                                  </div>
+                              </td>
+                          </tr>
 
+                      </table>
                   </form>
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
               </div>
           </div>
       </div>
+      </form>
   </div>
   <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">

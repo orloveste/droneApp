@@ -1,7 +1,9 @@
 package com.futureDroneV5K.droneApp.controllers;
 
 import com.futureDroneV5K.droneApp.models.Client;
+import com.futureDroneV5K.droneApp.services.CityService;
 import com.futureDroneV5K.droneApp.services.ClientService;
+import com.futureDroneV5K.droneApp.services.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,11 +15,17 @@ import java.util.List;
 public class ClientController {
     @Autowired
     private ClientService clientService;
+    @Autowired private CityService cityService;
+    @Autowired private RegionService regionService;
 
     @GetMapping("/clients")
     public String getClients(Model model){
         List<Client> clientList = clientService.getClient();
         model.addAttribute("clients", clientList);
+//        short version
+        model.addAttribute("cities", cityService.getCity());
+        model.addAttribute("regions", regionService.getRegions());
+
         return "client";
     }
     @PostMapping("/clients/addNew")
