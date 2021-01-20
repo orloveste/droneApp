@@ -5,7 +5,6 @@ import com.futureDroneV5K.droneApp.models.Location;
 import com.futureDroneV5K.droneApp.models.Region;
 import com.futureDroneV5K.droneApp.services.CityService;
 import com.futureDroneV5K.droneApp.services.LocationService;
-import com.futureDroneV5K.droneApp.services.LocationService;
 import com.futureDroneV5K.droneApp.services.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
