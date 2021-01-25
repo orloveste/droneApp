@@ -29,7 +29,7 @@ public class RegionController {
         List<City> cityList = cityService.getCity();
         model.addAttribute("cities", cityList);
 
-        return "Region";
+        return "region";
     }
     @PostMapping("/regions/addNew")
     public String addNew(Region Region){

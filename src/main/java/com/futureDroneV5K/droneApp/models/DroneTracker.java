@@ -1,5 +1,6 @@
 package com.futureDroneV5K.droneApp.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
@@ -14,6 +15,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class DroneTracker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,12 +26,13 @@ public class DroneTracker {
     @JoinColumn(name = "droneid", insertable = false, updatable = false)
     private Drone drone;
     private Long droneid;
-    private String dronename;
+
 
     @ManyToOne
     @JoinColumn(name = "locationidStart", insertable = false, updatable = false)
     private Location locationStart;
     private Long locationidStart;
+
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateStart;

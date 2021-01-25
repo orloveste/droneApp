@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -21,5 +22,7 @@ public class Drone {
 
     private String dronename;
 
+    @OneToMany(mappedBy = "drone")
+    private List<DroneTracker> droneTrackerList;
 
 }

@@ -418,15 +418,15 @@
               <tbody>
               <tr th:each="droneTracker:${droneTrackers}">
                   <td th:text="${droneTracker.id}"></td>
-                  <td th:text="${droneTracker.dronename}"></td>
+                  <td th:text="${droneTracker.drone.dronename}"></td>
                   <td th:text="${droneTracker.dateStart}"></td>
                   <td th:text="${droneTracker.notes}"></td>
                   <td>
                       <div class="btn-group">
                           <a th:href="@{/droneTrackers/findById/(id=${droneTracker.id})}"
                              class="btn btn-primary" id="editButton">Edit</a>
-                          <a th:href="@{/droneTrackers/findById/(id=${droneTracker.id})}"
-                             class="btn btn-info" id="detailsButton"><i class="icon_document_alt"></i></a>
+<!--                          <a th:href="@{/droneTrackers/findById/(id=${droneTracker.id})}"-->
+<!--                             class="btn btn-info" id="detailsButton"><i class="icon_document_alt"></i></a>-->
                           <a th:href="@{/droneTrackers/delete/(id=${droneTracker.id})}"
                              class="btn btn-danger" id="deleteButton">Delete</a>
                       </div>

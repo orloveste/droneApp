@@ -1,6 +1,7 @@
 package com.futureDroneV5K.droneApp.controllers;
 
 import com.futureDroneV5K.droneApp.models.DroneTracker;
+import com.futureDroneV5K.droneApp.services.DroneService;
 import com.futureDroneV5K.droneApp.services.LocationService;
 import com.futureDroneV5K.droneApp.services.DroneTrackerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,8 @@ import java.util.List;
 public class DroneTrackerController {
     @Autowired
     private DroneTrackerService droneTrackerService;
-    @Autowired private LocationService locationService;
+//    @Autowired private LocationService locationService;
+    @Autowired private DroneService droneService;
 
 
     @GetMapping("/droneTrackers")
@@ -22,7 +24,8 @@ public class DroneTrackerController {
         List<DroneTracker> droneTrackerList = droneTrackerService.getDroneTracker();
         model.addAttribute("droneTrackers", droneTrackerList);
 //        short version
-        model.addAttribute("locations", locationService.getLocations());
+//        model.addAttribute("locations", locationService.getLocations());
+        model.addAttribute("drones", droneService.getDrone());
 
 
         return "droneTracker";
