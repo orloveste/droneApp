@@ -49,7 +49,7 @@
       </div>
 
       <!--logo start-->
-      <a href="index.html" class="logo">Nice <span class="lite">Admin</span></a>
+      <a href="/index" class="logo">Drones <span class="lite">Services</span></a>
       <!--logo end-->
 
       <div class="nav search-row" id="top_menu">
@@ -323,9 +323,9 @@
                       <span class="menu-arrow arrow_carrot-right"></span>
                   </a>
                   <ul class="sub">
-                      <li><a class="" href="/cities">City</a></li>
-                      <li><a class="" href="/regions">Region</a></li>
-                      <li><a class="" th:href="@{/locations}">Location</a></li>
+                      <li><a class="" th:href="@{/cities}">City</a></li>
+                      <li><a class="" th:href="@{/regions}">Region</a></li>
+                      <li><a class="" href="/locations">Location</a></li>
                   </ul>
               </li>
               <li class="sub-menu">
@@ -336,18 +336,18 @@
                   </a>
                   <ul class="sub">
                       <li><a class="" href="/clients">Client</a></li>
-                      <li><a class="" href="/vineOmuDeLaMunteCuCatelulDePicior">Agarici</a></li>
-                      <li><a class="" href="/admin">Admin</a></li>
+                      <li><a class="" href="">Agarici</a></li>
+                      <li><a class="" href="">Admin</a></li>
                   </ul>
               </li>
               <li>
-                  <a class="" href="/saTe'nCing.ro">
+                  <a class="" href="widgets.html">
                       <i class="icon_genius"></i>
                       <span>Contact us</span>
                   </a>
               </li>
               <li>
-                  <a class="" href="/blabla jaja">
+                  <a class="" href="chart-chartjs.html">
                       <i class="icon_piechart"></i>
                       <span>Statistics</span>
 
@@ -364,6 +364,8 @@
                   <ul class="sub">
                       <li><a class="" href="/drones">Drone</a></li>
                       <li><a class="" href="/droneTypes">Drone Types</a></li>
+                      <li><a class="" href="/droneTrackers">Drone Tracker</a></li>
+                      <li><a class="" th:href="@{/invoices}">Invoices</a></li>
                   </ul>
               </li>
 
@@ -376,8 +378,8 @@
                   <ul class="sub">
                       <li><a class="" href="/profile">Profile</a></li>
                       <li><a class="" href="/login"><span>Login Page</span></a></li>
-                      <li><a class="" href="/contact"><span>Contact Page</span></a></li>
-                      <li><a class="active" href="/blank">Blank Page</a></li>
+                      <li><a class="" th:href="@{/contacts}"><span>Contact Page</span></a></li>
+                      <li><a class="active" href="/contacts">test contacts</a></li>
                       <li><a class="" href="/404">404 Error</a></li>
                   </ul>
               </li>
@@ -395,14 +397,41 @@
           <div class="col-lg-12">
             <h3 class="page-header"><i class="fa fa fa-bars"></i> Pages</h3>
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-              <li><i class="fa fa-bars"></i>Pages</li>
-              <li><i class="fa fa-square-o"></i>Pages</li>
+              <li><i class="fa fa-home"></i><a href="/index">Home Page</a></li>
+<!--              <li><i class="fa fa-bars"></i>Pages</li>-->
+<!--              <li><i class="fa fa-square-o"></i>Pages</li>-->
             </ol>
           </div>
         </div>
         <!-- page start-->
-          <h3>test page drones :)</h3>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">add new drone</button>
+          <table class="table">
+              <thead>
+              <tr>
+                  <th>drone id</th>
+                  <th>drone name</th>
+
+                  <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="drone:${drones}">
+                  <td th:text="${drone.droneid}"></td>
+                  <td th:text="${drone.dronename}"></td>
+
+                  <td>
+                      <div class="btn-group">
+                          <a th:href="@{/drones/findById/(id=${drone.droneid})}"
+                             class="btn btn-primary" id="editButton">Edit</a>
+<!--                          <a th:href="@{/drones/findById/(id=${drone.droneid})}"-->
+<!--                             class="btn btn-info" id="detailsButton"><i class="icon_document_alt"></i></a>-->
+                          <a th:href="@{/drones/delete/(id=${drone.droneid})}"
+                             class="btn btn-danger" id="deleteButton">Delete</a>
+                      </div>
+                  </td>
+              </tr>
+              </tbody>
+          </table>
         <!-- page end-->
       </section>
     </section>
@@ -420,6 +449,66 @@
     </div>
   </section>
   <!-- container section end -->
+
+  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <form th:action="@{/drones/addNew}" method="post">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">New drone</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<!--                          <span aria-hidden="true">&times;</span>-->
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <form>
+                          <table width="100%">
+                              <tr>
+                                  <td width="50%">
+                                      <div class="form-group">
+                                          <label for="droneNameAdd" class="col-form-label">drone name</label>
+                                          <input type="text" class="form-control" id="droneNameAdd" name="dronename">
+                                      </div>
+
+                                  </td>
+                                  <td width="50%">
+
+                                      <div class="form-group">
+                                          <button type="submit" class="btn btn-primary">submit</button>
+                                      </div>
+                                  </td>
+                              </tr>
+
+                          </table>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>
+  <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">confirm delete</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <p>esti sigur ca nu arde?</p>
+              </div>
+              <div class="modal-footer">
+                  <a class="btn btn-primary" id="confirmDeleteButton" href="">Save changes - delete</a>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel action</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
   <!-- javascripts -->
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -428,6 +517,7 @@
   <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
   <!--custome script for all page-->
   <script src="js/scripts.js"></script>
+  <script src="js/drone.js"></script>
 
 
 </body>
