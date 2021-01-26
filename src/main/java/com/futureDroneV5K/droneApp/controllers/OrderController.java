@@ -2,6 +2,9 @@ package com.futureDroneV5K.droneApp.controllers;
 
 
 import com.futureDroneV5K.droneApp.models.OrderCustom;
+import com.futureDroneV5K.droneApp.services.ClientService;
+import com.futureDroneV5K.droneApp.services.DroneService;
+import com.futureDroneV5K.droneApp.services.LocationService;
 import com.futureDroneV5K.droneApp.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,13 +17,20 @@ import java.util.List;
 public class OrderController {
     @Autowired
     private OrderService orderService;
+    @Autowired private DroneService droneService;
+    @Autowired private ClientService clientService;
+    @Autowired private LocationService locationService;
+
 
 
     @GetMapping("/orders")
     public String getOrders(Model model){
         List<OrderCustom> orderCustomList = orderService.getOrders();
         model.addAttribute("orders", orderCustomList);
-
+//        short version
+        model.addAttribute("drones", droneService.getDrones());
+        model.addAttribute("clients", clientService.getClients());
+        model.addAttribute("locations", locationService.getLocations());
 
         return "order";
     }

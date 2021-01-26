@@ -36,6 +36,6 @@ public class Client {
     private Region region;
     private Long regionid;
 
-//    @OneToMany(mappedBy = "client")
-//    private List<Order> orderList;
+    @OneToMany(mappedBy = "client")
+    private List<OrderCustom> orderList;
 }

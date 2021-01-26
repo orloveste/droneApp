@@ -30,6 +30,6 @@ public class Location {
     private Long  regionid;
     private String regionname;
 
-//    @OneToMany(mappedBy = "location")
-//    private List<Order> orderList;
+    @OneToMany(mappedBy = "location")
+    private List<OrderCustom> orderList;
 }
