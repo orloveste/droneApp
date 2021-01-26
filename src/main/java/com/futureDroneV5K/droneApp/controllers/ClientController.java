@@ -20,7 +20,7 @@ public class ClientController {
 
     @GetMapping("/clients")
     public String getClients(Model model){
-        List<Client> clientList = clientService.getClient();
+        List<Client> clientList = clientService.getClients();
         model.addAttribute("clients", clientList);
 //        short version
         model.addAttribute("cities", cityService.getCity());

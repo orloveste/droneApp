@@ -9,8 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Controller
 public class DroneController {
     @Autowired
@@ -20,7 +18,7 @@ public class DroneController {
 
     @GetMapping("/drones")
     public String getDrones(Model model){
-        model.addAttribute("drones", droneService.getDrone());
+        model.addAttribute("drones", droneService.getDrones());
 
         return "drone";
     }

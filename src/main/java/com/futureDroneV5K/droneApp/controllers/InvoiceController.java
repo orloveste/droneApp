@@ -24,7 +24,7 @@ public class InvoiceController {
         List<Invoice> invoiceList = invoiceService.getInvoice();
         model.addAttribute("invoices", invoiceList);
 
-        model.addAttribute("clients", clientService.getClient());
+        model.addAttribute("clients", clientService.getClients());
         return "invoice";
     }
     @PostMapping("/invoices/addNew")

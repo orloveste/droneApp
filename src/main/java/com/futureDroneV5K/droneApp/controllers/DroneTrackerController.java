@@ -25,7 +25,7 @@ public class DroneTrackerController {
         model.addAttribute("droneTrackers", droneTrackerList);
 //        short version
         model.addAttribute("locations", locationService.getLocations());
-        model.addAttribute("drones", droneService.getDrone());
+        model.addAttribute("drones", droneService.getDrones());
 
 
         return "droneTracker";

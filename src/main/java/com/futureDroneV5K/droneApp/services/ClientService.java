@@ -11,7 +11,7 @@ import java.util.List;
 public class ClientService {
     @Autowired
     private ClientRepository clientRepository;
-    public List<Client> getClient() {
+    public List<Client> getClients() {
         return clientRepository.findAll();
     }
     public void saveClient(Client client){

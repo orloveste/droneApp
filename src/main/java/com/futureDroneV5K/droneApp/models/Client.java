@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -34,4 +35,7 @@ public class Client {
     @JoinColumn(name = "regionid", insertable = false, updatable = false)
     private Region region;
     private Long regionid;
+
+//    @OneToMany(mappedBy = "client")
+//    private List<Order> orderList;
 }

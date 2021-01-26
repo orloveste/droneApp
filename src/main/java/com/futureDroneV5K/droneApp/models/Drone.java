@@ -25,4 +25,7 @@ public class Drone {
     @OneToMany(mappedBy = "drone")
     private List<DroneTracker> droneTrackerList;
 
+//    @OneToMany(mappedBy = "drone")
+//    private List<Order> orderList;
+
 }

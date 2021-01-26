@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -29,4 +30,6 @@ public class Location {
     private Long  regionid;
     private String regionname;
 
+//    @OneToMany(mappedBy = "location")
+//    private List<Order> orderList;
 }

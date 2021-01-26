@@ -11,7 +11,7 @@ import java.util.List;
 public class DroneService {
     @Autowired
     private DroneRepository droneRepository;
-    public List<Drone> getDrone() {
+    public List<Drone> getDrones() {
         return droneRepository.findAll();
     }
     public void saveDrone(Drone drone){
