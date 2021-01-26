@@ -480,6 +480,17 @@
                                           </select>
                                       </div>
                                       <div class="form-group">
+                                          <label for="dllLocationStartAdd" class="col-form-label">Location: </label>
+
+                                          <select class="form-control" id="dllLocationStartAdd" name="locationidStart">
+                                              <option>SELECT</option>
+                                              <option th:each="location: ${locations}"
+                                                      th:value="${location.locationid}"
+                                                      th:text="${location.description}">
+                                              </option>
+                                          </select>
+                                      </div>
+                                      <div class="form-group">
                                           <label for="dateStartAdd" class="col-form-label">date start</label>
                                           <input type="date" class="form-control" id="dateStartAdd" name="dateStart">
                                       </div>

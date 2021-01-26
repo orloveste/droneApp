@@ -38,7 +38,7 @@ public class DroneTracker {
     private Date dateStart;
 
     @ManyToOne
-    @JoinColumn(name = "locationiEnd", insertable = false, updatable = false)
+    @JoinColumn(name = "locationidEnd", insertable = false, updatable = false)
     private Location locationEnd;
     private Long locationidEnd;
 

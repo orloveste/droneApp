@@ -15,7 +15,7 @@ import java.util.List;
 public class DroneTrackerController {
     @Autowired
     private DroneTrackerService droneTrackerService;
-//    @Autowired private LocationService locationService;
+    @Autowired private LocationService locationService;
     @Autowired private DroneService droneService;
 
 
@@ -24,7 +24,7 @@ public class DroneTrackerController {
         List<DroneTracker> droneTrackerList = droneTrackerService.getDroneTracker();
         model.addAttribute("droneTrackers", droneTrackerList);
 //        short version
-//        model.addAttribute("locations", locationService.getLocations());
+        model.addAttribute("locations", locationService.getLocations());
         model.addAttribute("drones", droneService.getDrone());
 
 
