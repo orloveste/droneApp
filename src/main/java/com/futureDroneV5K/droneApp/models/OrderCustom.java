@@ -14,7 +14,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "orderid")
 public class OrderCustom {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

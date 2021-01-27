@@ -406,9 +406,36 @@
           </div>
         </div>
         <!-- page start-->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">add new</button>
+          <table class="table">
+              <thead>
+              <tr>
+                  <th><i class="icon_id "></i> order id</th>
+                  <th><i class="icon_table "></i> order name</th>
+
+                  <th><i class="icon_cogs "></i> Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr th:each="order:${orders}">
+                  <td th:text="${order.orderid}"></td>
+                  <td th:text="${order.name}"></td>
+
+                  <td>
+                      <div class="btn-group">
+                          <a th:href="@{/orders/findById/(id=${order.orderid})}"
+                             class="btn btn-primary" id="editButton">Edit</a>
+                          <a th:href="@{/orders/findById/(id=${order.orderid})}"
+                                                       class="btn btn-info" id="detailsButton"><i class="icon_document_alt"></i></a>
+                          <a th:href="@{/orders/delete/(id=${order.orderid})}"
+                             class="btn btn-danger" id="deleteButton">Delete</a>
+                      </div>
+                  </td>
+              </tr>
+              </tbody>
+          </table>
 
 
-        Page content goes here
         <!-- page end-->
       </section>
     </section>
@@ -426,6 +453,190 @@
     </div>
   </section>
   <!-- container section end -->
+
+  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <form th:action="@{/orders/addNew}" method="post">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">New order</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <form>
+                          <table width="100%">
+                              <tr>
+                                  <td width="50%">
+                                      <div class="form-group">
+                                          <label for="nameAdd" class="col-form-label">order name</label>
+                                          <input type="text" class="form-control" id="nameAdd" name="name">
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="dllDroneAdd" class="col-form-label">Drone: </label>
+
+                                          <select class="form-control" id="dllDroneAdd" name="droneid">
+                                              <option>SELECT</option>
+                                              <option th:each="drone: ${drones}"
+                                                      th:value="${drone.droneid}"
+                                                      th:text="${drone.dronename}">
+                                              </option>
+                                          </select>
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="dateOutAdd" class="col-form-label">date out</label>
+                                          <input type="date" class="form-control" id="dateOutAdd" name="dateOut">
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="dateInAdd" class="col-form-label">date in</label>
+                                          <input type="date" class="form-control" id="dateInAdd" name="dateIn">
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="dllClientAdd" class="col-form-label">Client: </label>
+
+                                          <select class="form-control" id="dllClientAdd" name="clientid">
+                                              <option>SELECT</option>
+                                              <option th:each="client: ${clients}"
+                                                      th:value="${client.clientid}"
+                                                      th:text="${client.name}">
+                                              </option>
+                                          </select>
+
+                                      <div class="form-group">
+                                          <label for="dllLocationStartAdd" class="col-form-label">Location: </label>
+
+                                          <select class="form-control" id="dllLocationStartAdd" name="locationid">
+                                              <option>SELECT</option>
+                                              <option th:each="location: ${locations}"
+                                                      th:value="${location.locationid}"
+                                                      th:text="${location.description}">
+                                              </option>
+                                          </select>
+                                      </div>
+
+
+                                  </td>
+                                  <td width="50%">
+
+
+                                      <div class="form-group">
+                                          <button type="submit" class="btn btn-primary">submit</button>
+                                      </div>
+                                  </td>
+                              </tr>
+
+                          </table>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <form th:action="@{/orders/addNew}" method="post">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">New order</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <form>
+                          <table width="100%">
+                              <tr>
+                                  <td width="50%">
+                                      <div class="form-group">
+                                          <label for="dllDroneAdd" class="col-form-label">Drone: </label>
+
+                                          <select class="form-control" id="dllDroneAdd" name="droneid">
+                                              <option>SELECT</option>
+                                              <option th:each="drone: ${drones}"
+                                                      th:value="${drone.droneid}"
+                                                      th:text="${drone.dronename}">
+                                              </option>
+                                          </select>
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="dateOutAdd" class="col-form-label">date out</label>
+                                          <input type="date" class="form-control" id="dateOutAdd" name="dateOut">
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="dateInAdd" class="col-form-label">date in</label>
+                                          <input type="date" class="form-control" id="dateInAdd" name="dateIn">
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="dllClientAdd" class="col-form-label">Client: </label>
+
+                                          <select class="form-control" id="dllClientAdd" name="clientid">
+                                              <option>SELECT</option>
+                                              <option th:each="client: ${clients}"
+                                                      th:value="${client.clientid}"
+                                                      th:text="${client.name}">
+                                              </option>
+                                          </select>
+
+                                          <div class="form-group">
+                                              <label for="dllLocationStartAdd" class="col-form-label">Location: </label>
+
+                                              <select class="form-control" id="dllLocationStartAdd" name="locationid">
+                                                  <option>SELECT</option>
+                                                  <option th:each="location: ${locations}"
+                                                          th:value="${location.locationid}"
+                                                          th:text="${location.description}">
+                                                  </option>
+                                              </select>
+                                          </div>
+
+
+                                  </td>
+                                  <td width="50%">
+
+
+                                      <div class="form-group">
+                                          <button type="submit" class="btn btn-primary">submit</button>
+                                      </div>
+                                  </td>
+                              </tr>
+
+                          </table>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>
+
+  <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">confirm delete</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <p>esti sigur ca nu arde?</p>
+              </div>
+              <div class="modal-footer">
+                  <a class="btn btn-primary" id="confirmDeleteButton" href="">Save changes - delete</a>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel action</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
   <!-- javascripts -->
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
