@@ -17,7 +17,7 @@ public class CityController {
 
     @GetMapping("/cities")
     public String getCities(Model model) {
-        List<City> cityList = cityService.getCity();
+        List<City> cityList = cityService.getCities();
         model.addAttribute("cities", cityList);
         return "city";
     }

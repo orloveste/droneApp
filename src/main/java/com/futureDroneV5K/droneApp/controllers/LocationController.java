@@ -30,7 +30,7 @@ public class LocationController {
         List<Location> locationList = locationService.getLocations();
         model.addAttribute("locations", locationList);
 
-        List<City> cityList = cityService.getCity();
+        List<City> cityList = cityService.getCities();
         model.addAttribute("cities", cityList);
 
         List<Region> regionList = regionService.getRegions();

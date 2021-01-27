@@ -5,9 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.util.Date;
 
 @Data
@@ -15,6 +13,8 @@ import java.util.Date;
 @AllArgsConstructor
 @MappedSuperclass
 public class Person {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String LastName;
@@ -26,7 +26,7 @@ public class Person {
     private Long cityid;
 
     @ManyToOne
-    @JoinColumn(name = "regionid")
+    @JoinColumn(name = "regionid", insertable = false, updatable = false)
     private Region region;
     private Long regionid;
 

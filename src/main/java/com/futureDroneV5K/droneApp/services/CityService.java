@@ -13,7 +13,7 @@ public class CityService {
     private CityRepository cityRepository;
 // autowire bean into service
     //return list of our city
-    public List<City> getCity() {
+    public List<City> getCities() {
         return cityRepository.findAll();
     }
 //add new or update by id

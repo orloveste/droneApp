@@ -26,7 +26,7 @@ public class RegionController {
         List<Region> regionList = regionService.getRegions();
         model.addAttribute("regions", regionList);
 
-        List<City> cityList = cityService.getCity();
+        List<City> cityList = cityService.getCities();
         model.addAttribute("cities", cityList);
 
         return "region";

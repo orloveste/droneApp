@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -25,4 +26,7 @@ public class Region {
     private City city;
     private Long cityid;
     private String cityname;
+
+    @OneToMany(mappedBy = "region")
+    private List<User> userRegionList;
 }

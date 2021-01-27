@@ -23,7 +23,7 @@ public class ContactController {
         List<Contact> contactList = contactService.getContact();
         model.addAttribute("contacts", contactList);
 //        short version
-        model.addAttribute("cities", cityService.getCity());
+        model.addAttribute("cities", cityService.getCities());
         model.addAttribute("regions", regionService.getRegions());
 
         return "contact";

@@ -23,7 +23,7 @@ public class ClientController {
         List<Client> clientList = clientService.getClients();
         model.addAttribute("clients", clientList);
 //        short version
-        model.addAttribute("cities", cityService.getCity());
+        model.addAttribute("cities", cityService.getCities());
         model.addAttribute("regions", regionService.getRegions());
 
         return "client";

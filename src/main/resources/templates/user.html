@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+  <meta name="description" content="Users Page">
   <meta name="author" content="GeeksLabs">
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>client page</title>
+  <title>Users Page</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@
       </div>
 
       <!--logo start-->
-      <a href="index.html" class="logo">Nice <span class="lite">Admin</span></a>
+      <a href="index.html" class="logo">Drone <span class="lite">Services</span></a>
       <!--logo end-->
 
       <div class="nav search-row" id="top_menu">
@@ -402,47 +402,44 @@
           <div class="col-lg-12">
             <h3 class="page-header"><i class="fa fa fa-bars"></i> Pages</h3>
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-              <li><i class="fa fa-bars"></i>Pages</li>
-              <li><i class="fa fa-square-o"></i>Pages</li>
+              <li><i class="fa fa-home"></i><a href="/index">Home Page</a></li>
+<!--              <li><i class="fa fa-bars"></i>Pages</li>-->
+<!--              <li><i class="fa fa-square-o"></i>Pages</li>-->
             </ol>
           </div>
         </div>
         <!-- page start-->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">add new client</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">add new</button>
           <table class="table">
               <thead>
               <tr>
-                  <th>client id</th>
-                  <th>client name</th>
-                  <th>client address</th>
-                  <th>client city</th>
-                  <th>phone</th>
-                  <th>email</th>
-                  <th>Action</th>
+                  <th><i class="icon_id "></i>  id</th>
+                  <th><i class="icon_table "></i> user full name</th>
+                  <th><i class="icon_table "></i> City</th>
+<!--                  <th><i class="icon_table "></i> </th>-->
+                  <th><i class="icon_cogs "></i> Action</th>
               </tr>
               </thead>
               <tbody>
-              <tr th:each="client:${clients}">
-                  <td th:text="${client.clientid}"></td>
-                  <td th:text="${client.name}"></td>
-                  <td th:text="${client.address}"></td>
-                  <td th:text="${client.clientcity}"></td>
-                  <td th:text="${client.phone}"></td>
-                  <td th:text="${client.email}"></td>
+              <tr th:each="user:${users}">
+                  <td th:text="${user.id}"></td>
+                  <td th:text="${user.firstName} + ' ' + ${user.LastName}"></td>
+                  <td th:text="${user.city}"></td>
+
                   <td>
                       <div class="btn-group">
-                          <a th:href="@{/clients/findById/(id=${client.clientid})}"
-                             class="btn btn-primary" id="editButton">Edit</a>
-                          <a th:href="@{/clients/findById/(id=${client.clientid})}"
-                             class="btn btn-info" id="detailsButton"><i class="icon_document_alt"></i></a>
-                          <a th:href="@{/clients/delete/(id=${client.clientid})}"
+<!--                          <a th:href="@{/users/findById/(id=${user.id})}"-->
+<!--                             class="btn btn-primary" id="editButton">Edit</a>-->
+<!--                          <a th:href="@{/users/findById/(id=${user.id})}"-->
+<!--                                                       class="btn btn-info" id="detailsButton"><i class="icon_document_alt"></i></a>-->
+                          <a th:href="@{/users/delete/(id=${user.id})}"
                              class="btn btn-danger" id="deleteButton">Delete</a>
                       </div>
                   </td>
               </tr>
               </tbody>
           </table>
+
 
         <!-- page end-->
       </section>
@@ -461,153 +458,113 @@
     </div>
   </section>
   <!-- container section end -->
-  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <form th:action="@{/clients/addNew}" method="post">
-      <div class="modal-dialog" role="document">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">New client</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                  <form>
-                      <table width="100%">
-                          <tr>
-                              <td width="50%">
-                                  <div class="form-group">
-                                      <label for="nameAdd" class="col-form-label">client name</label>
-                                      <input type="text" class="form-control" id="nameAdd" name="name">
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="addressAdd" class="col-form-label">client address</label>
-                                      <input type="text" class="form-control" id="addressAdd" name="address">
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="clientcityAdd" class="col-form-label">client city</label>
-                                      <input type="text" class="form-control" id="clientcityAdd" name="clientcity">
-                                  </div>
-                              </td>
-                              <td width="50%">
-                                  <div class="form-group">
-                                      <label for="phoneAdd" class="col-form-label">phone</label>
-                                      <input type="text" class="form-control" id="phoneAdd" name="phone">
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="emailAdd" class="col-form-label">email</label>
-                                      <input type="email" class="form-control" id="emailAdd" name="email" placeholder="Email">
-                                  </div>
-                                  <div class="form-group">
-                                      <button type="submit" class="btn btn-primary">submit</button>
-                                  </div>
-                              </td>
-                          </tr>
 
-                      </table>
-                  </form>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <form th:action="@{/users/addNew}" method="post">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">New user</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <form>
+                          <table width="100%">
+                              <tr>
+                                  <td width="50%">
+                                      <div class="form-group">
+                                          <label for="firstNameAdd" class="col-form-label">user first name</label>
+                                          <input type="text" class="form-control" id="firstNameAdd" name="firstName">
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="LastNameAdd" class="col-form-label">user last name</label>
+                                          <input type="text" class="form-control" id="LastNameAdd" name="LastName">
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="dllCityAdd" class="col-form-label">City: </label>
+
+                                          <select class="form-control" id="dllCityAdd" name="cityid">
+                                              <option>SELECT</option>
+                                              <option th:each="city: ${cities}"
+                                                      th:value="${city.cityid}"
+                                                      th:text="${city.cityname}">
+                                              </option>
+                                          </select>
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="dllGenderAdd" class="col-form-label">Gender: </label>
+
+                                          <select class="form-control" id="dllGenderAdd" name="gender">
+                                              <option>SELECT</option>
+                                              <option th:each="user: ${users}"
+                                                      th:text="${'Not mentioned'}">
+                                              </option>
+                                              <option th:each="user: ${users}"
+                                                      th:text="${'Female'}">
+                                              </option>
+                                              <option th:each="user: ${users}"
+                                                      th:text="${'Male'}">
+                                              </option>
+                                          </select>
+                                      </div>
+
+
+                                      <div class="form-group">
+                                          <label for="dateOutAdd" class="col-form-label">date out</label>
+                                          <input type="date" class="form-control" id="dateOutAdd" name="dateOut">
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="dateInAdd" class="col-form-label">date in</label>
+                                          <input type="date" class="form-control" id="dateInAdd" name="dateIn">
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="dllClientAdd" class="col-form-label">Client: </label>
+
+                                          <select class="form-control" id="dllClientAdd" name="clientid">
+                                              <option>SELECT</option>
+                                              <option th:each="client: ${clients}"
+                                                      th:value="${client.clientid}"
+                                                      th:text="${client.name}">
+                                              </option>
+                                          </select>
+
+                                      <div class="form-group">
+                                          <label for="dllLocationStartAdd" class="col-form-label">Location: </label>
+
+                                          <select class="form-control" id="dllLocationStartAdd" name="locationid">
+                                              <option>SELECT</option>
+                                              <option th:each="location: ${locations}"
+                                                      th:value="${location.locationid}"
+                                                      th:text="${location.description}">
+                                              </option>
+                                          </select>
+                                      </div>
+
+
+                                  </td>
+                                  <td width="50%">
+
+
+                                      <div class="form-group">
+                                          <button type="submit" class="btn btn-primary">submit</button>
+                                      </div>
+                                  </td>
+                              </tr>
+
+                          </table>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
               </div>
           </div>
-      </div>
       </form>
   </div>
-  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Update client data</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                  <form th:action="@{/clients/update}" method="put">
-                      <div class="form-group">
-                          <label for="clientidEdit" class="col-form-label">client Id</label>
-                          <input type="text" class="form-control" id="clientidEdit" name="clientid" readonly>
-                      </div>
-                      <div class="form-group">
-                          <label for="nameEdit" class="col-form-label">name</label>
-                          <input type="text" class="form-control" id="nameEdit" name="name">
-                      </div>
-                      <div class="form-group">
-                          <label for="addressEdit" class="col-form-label">address</label>
-                          <input type="text" class="form-control" id="addressEdit" name="address">
-                      </div>
-                      <div class="form-group">
-                          <label for="clientcityEdit" class="col-form-label">city</label>
-                          <input type="text" class="form-control" id="clientcityEdit" name="clientcity">
-                      </div>
-                      <div class="form-group">
-                          <label for="phoneEdit" class="col-form-label">phone</label>
-                          <input type="text" class="form-control" id="phoneEdit" name="phone">
-                      </div>
-                      <div class="form-group">
-                          <label for="emailEdit" class="col-form-label">email</label>
-                          <input type="text" class="form-control" id="emailEdit" name="email">
-                      </div>
-                      <div class="form-group">
-                          <button type="submit" class="btn btn-primary">submit</button>
-                      </div>
 
-                  </form>
-              </div>
-              <div class="modal-footer">
-                  <!--                  <a class="btn btn-primary" id="confirmUpdateButton" href="">Save changes - update</a>-->
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">detail clientData</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-              </div>
-              <div class="modal-body">
-                  <form th:action="@{/client/detail}" method="get">
-                      <div class="form-group">
-                          <label for="clientidDetail" class="col-form-label">client Id</label>
-                          <input type="text" class="form-control" id="clientidDetail" name="clientid" readonly>
-                      </div>
-                      <div class="form-group">
-                          <label for="nameDetail" class="col-form-label">name</label>
-                          <input type="text" class="form-control" id="nameDetail" name="name">
-                      </div>
-                      <div class="form-group">
-                          <label for="addressDetail" class="col-form-label">adress</label>
-                          <input type="text" class="form-control" id="addressDetail" name="address">
-                      </div>
-                      <div class="form-group">
-                          <label for="clientcityDetail" class="col-form-label">city </label>
-                          <input type="text" class="form-control" id="clientcityDetail" name="clientcity">
-                      </div>
-                      <div class="form-group">
-                          <label for="phoneDetail" class="col-form-label">phone</label>
-                          <input type="text" class="form-control" id="phoneDetail" name="phone">
-                      </div>
-                      <div class="form-group">
-                          <label for="emailDetail" class="col-form-label">email</label>
-                          <input type="text" class="form-control" id="emailDetail" name="email">
-                      </div>
-                  </form>
-              </div>
-              <div class="modal-footer">
-                  <!--                  <a class="btn btn-primary" id="confirmUpdateButton" href="">Save changes - update</a>-->
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-              </div>
-          </div>
-      </div>
-  </div>
   <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -636,7 +593,6 @@
   <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
   <!--custome script for all page-->
   <script src="js/scripts.js"></script>
-  <script src="js/client.js"></script>
 
 
 </body>
