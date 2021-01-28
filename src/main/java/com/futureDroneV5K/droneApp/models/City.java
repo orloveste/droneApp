@@ -25,6 +25,6 @@ public class City {
     @OneToMany(mappedBy = "city")
     private List<Region> cityRegionList;
 
-    @OneToMany(mappedBy = "city")
-    private List<User> userCityList;
+//    @OneToMany(mappedBy = "city")
+//    private List<User> userCityList;
 }

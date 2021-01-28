@@ -27,6 +27,6 @@ public class Region {
     private Long cityid;
     private String cityname;
 
-    @OneToMany(mappedBy = "region")
-    private List<User> userRegionList;
+//    @OneToMany(mappedBy = "region")
+//    private List<User> userRegionList;
 }

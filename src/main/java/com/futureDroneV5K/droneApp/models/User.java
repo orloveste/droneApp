@@ -1,20 +1,22 @@
 package com.futureDroneV5K.droneApp.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.NoArgsConstructor;
 
-
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import java.util.Date;
+import javax.persistence.*;
 
 @Entity
 @Data
-@EqualsAndHashCode(callSuper = false)
-public class User extends Person {
-
+@AllArgsConstructor
+@NoArgsConstructor
+public class User {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private Long id;
+    private String username;
+    private String email;
+    private String password;
 
 //    @ManyToOne
 //    @JoinColumn(name = "usertypeid", insertable = false,updatable = false)

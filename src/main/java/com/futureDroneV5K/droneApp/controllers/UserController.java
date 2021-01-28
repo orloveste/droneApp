@@ -19,8 +19,8 @@ public class UserController {
     @GetMapping("/users")
     public String getUsers(Model model){
         model.addAttribute("users", userService.getUsers());
-        model.addAttribute("cities", cityService.getCities());
-        model.addAttribute("regions", regionService.getRegions());
+//        model.addAttribute("cities", cityService.getCities());
+//        model.addAttribute("regions", regionService.getRegions());
 
         return "user";
     }
