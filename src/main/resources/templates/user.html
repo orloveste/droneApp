@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -414,17 +414,18 @@
               <thead>
               <tr>
                   <th><i class="icon_id "></i>  id</th>
-                  <th><i class="icon_table "></i> user full name</th>
-                  <th><i class="icon_table "></i> City</th>
-<!--                  <th><i class="icon_table "></i> </th>-->
+                  <th><i class="icon_table "></i> user name</th>
+                  <th><i class="icon_table "></i> email</th>
+                  <th><i class="icon_table "></i> password</th>
                   <th><i class="icon_cogs "></i> Action</th>
               </tr>
               </thead>
               <tbody>
               <tr th:each="user:${users}">
                   <td th:text="${user.id}"></td>
-                  <td th:text="${user.firstName} + ' ' + ${user.LastName}"></td>
-                  <td th:text="${user.city}"></td>
+                  <td th:text="${user.username}"></td>
+                  <td th:text="${user.email}"></td>
+                  <td th:text="${user.password}"></td>
 
                   <td>
                       <div class="btn-group">
@@ -475,71 +476,21 @@
                               <tr>
                                   <td width="50%">
                                       <div class="form-group">
-                                          <label for="firstNameAdd" class="col-form-label">user first name</label>
-                                          <input type="text" class="form-control" id="firstNameAdd" name="firstName">
+                                          <label for="userNameAdd" class="col-form-label">user name</label>
+                                          <input type="text" class="form-control" id="userNameAdd" name="username">
                                       </div>
                                       <div class="form-group">
-                                          <label for="LastNameAdd" class="col-form-label">user last name</label>
-                                          <input type="text" class="form-control" id="LastNameAdd" name="LastName">
+                                          <label for="emailAdd" class="col-form-label">email</label>
+                                          <input type="email" class="form-control" id="emailAdd" name="email" placeholder="Email">
                                       </div>
-                                      <div class="form-group">
-                                          <label for="dllCityAdd" class="col-form-label">City: </label>
-
-                                          <select class="form-control" id="dllCityAdd" name="cityid">
-                                              <option>SELECT</option>
-                                              <option th:each="city: ${cities}"
-                                                      th:value="${city.cityid}"
-                                                      th:text="${city.cityname}">
-                                              </option>
-                                          </select>
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="dllGenderAdd" class="col-form-label">Gender: </label>
-
-                                          <select class="form-control" id="dllGenderAdd" name="gender">
-                                              <option>SELECT</option>
-                                              <option value="Other">other</option>
-                                              <option value="Female">Female</option>
-                                              <option value="Male">Male</option>
-                                          </select>
-                                      </div>
-
-
-<!--                                      <div class="form-group">-->
-<!--                                          <label for="dateOutAdd" class="col-form-label">date out</label>-->
-<!--                                          <input type="date" class="form-control" id="dateOutAdd" name="dateOut">-->
-<!--                                      </div>-->
-
-<!--                                      <div class="form-group">-->
-<!--                                          <label for="dateInAdd" class="col-form-label">date in</label>-->
-<!--                                          <input type="date" class="form-control" id="dateInAdd" name="dateIn">-->
-<!--                                      </div>-->
-<!--                                      <div class="form-group">-->
-<!--                                          <label for="dllClientAdd" class="col-form-label">Client: </label>-->
-
-<!--                                          <select class="form-control" id="dllClientAdd" name="clientid">-->
-<!--                                              <option>SELECT</option>-->
-<!--                                              <option th:each="client: ${clients}"-->
-<!--                                                      th:value="${client.clientid}"-->
-<!--                                                      th:text="${client.name}">-->
-<!--                                              </option>-->
-<!--                                          </select>-->
-
-<!--                                      <div class="form-group">-->
-<!--                                          <label for="dllLocationStartAdd" class="col-form-label">Location: </label>-->
-
-<!--                                          <select class="form-control" id="dllLocationStartAdd" name="locationid">-->
-<!--                                              <option>SELECT</option>-->
-<!--                                              <option th:each="location: ${locations}"-->
-<!--                                                      th:value="${location.locationid}"-->
-<!--                                                      th:text="${location.description}">-->
-<!--                                              </option>-->
-<!--                                          </select>-->
-<!--                                      </div>-->
 
 
                                     </td>
                                   <td width="50%">
+                                      <div class="form-group">
+                                          <label for="passwordAdd" class="col-form-label">password</label>
+                                          <input type="password" class="form-control" id="passwordAdd" name="password" placeholder="Password">
+                                      </div>
 
 
                                       <div class="form-group">
