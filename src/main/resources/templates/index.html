@@ -272,9 +272,9 @@
           <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="img/avatar1_small.jpg">
+                                <img alt="" th:src="@{'/img/photo/' + ${#authentication.getPrincipal().getUsername()} + '.jpg'}" height="38" width="38">
                             </span>
-                            <span class="username">Jenifer Smith</span>
+                            <span class="username" th:text="${#authentication.getPrincipal().getUsername()}">Demo authentication</span>
                             <b class="caret"></b>
                         </a>
             <ul class="dropdown-menu extended logout">
@@ -292,7 +292,7 @@
                 <a href="#"><i class="icon_chat_alt"></i> Chats</a>
               </li>
               <li>
-                <a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
+                <a href="/login"><i class="icon_key_alt"></i> Log Out</a>
               </li>
               <li>
                 <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
