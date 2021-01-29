@@ -17,6 +17,8 @@ public class User {
     private String username;
     private String email;
     private String password;
+    private String firstname;
+    private String lastname;
 
 //    @ManyToOne
 //    @JoinColumn(name = "usertypeid", insertable = false,updatable = false)

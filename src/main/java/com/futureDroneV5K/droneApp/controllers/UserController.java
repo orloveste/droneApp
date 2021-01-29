@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class UserController {
@@ -24,11 +26,20 @@ public class UserController {
 
         return "user";
     }
-    @PostMapping("/users/addNew")
-    public String addNew(User user){
+//    register new user from login
+    @PostMapping(value = "users/addNew")
+    public RedirectView addNew(User user, RedirectAttributes redirectAttributes){
         userService.saveUser(user);
-        return "redirect:/users";
+        RedirectView redirectView = new RedirectView("/login", true);
+        redirectAttributes.addFlashAttribute("message", "Login now, registred!");
+        return redirectView;
     }
+
+//    @PostMapping("/users/addNew")
+//    public String addNew(User user){
+//        userService.saveUser(user);
+//        return "redirect:/users";
+//    }
     @RequestMapping(value = "/users/findById")
     @ResponseBody
     public User findById(Long id){
