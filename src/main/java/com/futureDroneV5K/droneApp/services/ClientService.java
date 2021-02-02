@@ -23,4 +23,12 @@ public class ClientService {
     public void delete(Long id) {
         clientRepository.deleteById(id);
     }
+
+    /*public Object findByUsername(String un, Long id) {
+        return clientRepository.findById(id).get();
+    }*/
+
+    /*public Client findByUsername(String un) {
+        return clientRepository.findByUsername(un);
+    }*/
 }
