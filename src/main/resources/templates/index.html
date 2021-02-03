@@ -315,13 +315,13 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="">
-            <a class="" href="/index">
+            <a class="" th:href="@{/index}">
               <i class="icon_house_alt"></i>
               <span>Home Page</span>
             </a>
           </li>
           <li class="sub-menu">
-            <a href="javascript:;" class="">
+            <a href="javascript:" class="">
               <i class="icon_document_alt"></i>
               <span>Geografic</span>
               <span class="menu-arrow arrow_carrot-right"></span>
@@ -329,26 +329,38 @@
             <ul class="sub">
               <li><a class="" th:href="@{/cities}">City</a></li>
               <li><a class="" th:href="@{/regions}">Region</a></li>
-              <li><a class="" href="/locations">Location</a></li>
+              <li><a class="" th:href="@{/locations}">Location</a></li>
             </ul>
           </li>
           <li class="sub-menu">
-            <a href="javascript:;" class="">
+            <a href="javascript:" class="">
               <i class="icon_desktop"></i>
               <span>Users</span>
               <span class="menu-arrow arrow_carrot-right"></span>
             </a>
             <ul class="sub">
-              <li><a class="" href="/clients">Client</a></li>
-              <li><a class="" href="/users">User</a></li>
-              <li><a class="" href="/admins">Admin</a></li>
-              <li><a class="" href="/clients">demo Client</a></li>
-              <li><a class="" href="/users">demo User</a></li>
-              <li><a class="" href="/admins">demo Admin</a></li>
+              <li class="sub-menu">
+                <a href="javascript:" class="">
+                  <i class="icon_wallet"></i>
+                  <span>Administrative</span>
+                  <span class="cke_menuarrow arrow_carrot-down_alt2"></span>
+                </a>
+                <ul class="sub">
+                  <li><a class="" th:href="@{/clients}">TypeTest</a></li>
+                  <li><a class="" th:href="@{/users}">RoleTest</a></li>
+                  <li><a class="" th:href="@{/administratives}">Administrative</a></li>
+                </ul>
+              </li>
+              <li><a class="" th:href="@{/clients}">Client</a></li>
+              <li><a class="" th:href="@{/users}">User</a></li>
+              <li><a class="" th:href="@{/admins}">Admin</a></li>
+              <li><a class="" th:href="@{/clients}">demo Client</a></li>
+              <li><a class="" th:href="@{/users}">demo User</a></li>
+              <li><a class="" th:href="@{/admins}">demo Admin</a></li>
             </ul>
           </li>
           <li class="sub-menu">
-            <a href="javascript:;" class="">
+            <a href="javascript:" class="">
               <i class="icon_table"></i>
               <span>DroneService</span>
               <span class="menu-arrow arrow_carrot-right"></span>
@@ -379,7 +391,7 @@
 
 
           <li class="sub-menu ">
-            <a href="javascript:;" class="">
+            <a href="javascript:" class="">
               <i class="icon_documents_alt"></i>
               <span>Related Pages</span>
               <span class="menu-arrow arrow_carrot-right"></span>

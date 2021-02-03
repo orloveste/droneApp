@@ -13,14 +13,13 @@ import javax.persistence.Id;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserType  {
-    //generic type of users management
+public class UserRole {
+    //generic access roles management
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private Long usertypeid;
-    private String usertypename;
-    private String photo;
-    private String username;
+    private Integer userroleid;
+    private String userrolename;
+
 
 //    admin,
 //    user,
