@@ -436,8 +436,8 @@
               <tr th:each="administrative:${administratives}">
                   <td th:text="${administrative.id}"></td>
                   <td>
-                      <a id="photoButton" th:href="@{'img/photo/avatar.jpg'}">
-                          <img th:src="@{'img/photo/avatar.jpg'}" width="40" height="40">
+                      <a id="photoButton" th:href="@{'img/photo/' + ${administrative.id} + '.jpg'}">
+                          <img th:src="@{'img/photo/' + ${administrative.id} + '.jpg'}" width="40" height="40">
                       </a>
                   </td>
                   <td th:text="${administrative.enrollDate}"></td>
