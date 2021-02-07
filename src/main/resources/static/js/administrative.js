@@ -37,8 +37,8 @@ $('document').ready(function(){
 
     $('.table #photoButton').on('click', function(event){
         event.preventDefault();
-        var href = $(this).attributes('href');
-        $('#photoModal #administrativePhoto').attributes('src', href);
+        var href = $(this).attr('href');
+        $('#photoModal #administrativePhoto').attr('src', href);
         $('#photoModal').modal();
     })
 });
