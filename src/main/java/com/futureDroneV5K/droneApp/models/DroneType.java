@@ -10,6 +10,6 @@ import javax.persistence.Entity;
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = false)
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+//@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id") //nu trebuie
 public class DroneType extends CommonObject{
 }

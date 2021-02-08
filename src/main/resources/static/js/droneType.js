@@ -16,6 +16,10 @@ $('document').ready(function(){
             $('#idDetail').val(droneType.id);
             $('#descriptionDetail').val(droneType.description);
             $('#detailsDetail').val(droneType.details);
+            $('#createdDetails').val(droneType.createdBy);
+            $('#createdDateDetails').val(droneType.createdDate.substr(0,19).replace("T", " "));
+            $('#lastUpdateByDetails').val(droneType.lastUpdateBy);
+            $('#lastUpdateOnDetails').val(droneType.lastUpdateOn.substr(0,19).replace("T", " "));
         });
         $('#detailModal').modal();
     });
