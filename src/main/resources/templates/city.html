@@ -462,15 +462,15 @@
                   <form th:action="@{/cities/addNew}" method="post">
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">city description</label>
-                          <input type="text" class="form-control" id="recipient-name" name="citydescription">
+                          <input type="text" class="form-control" id="recipient-name" name="citydescription" required>
                       </div>
                       <div class="form-group">
                           <label for="recipient-name" class="col-form-label">city name</label>
-                          <input type="text" class="form-control" id="recipient-name" name="cityname">
+                          <input type="text" class="form-control" id="recipient-name" name="cityname" required>
                       </div>
                       <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">city postal code</label>
-                          <input type="text" class="form-control" id="recipient-name" name="citypostalcode">
+                          <label for="recipient-name" class="col-form-label">city code</label>
+                          <input type="number" class="form-control" id="recipient-name" name="citypostalcode">
                       </div>
                       <div class="form-group">
                           <button type="submit" class="btn btn-primary">submit</button>

@@ -471,8 +471,8 @@
                           </select>
                       </div>
                       <div class="form-group">
-                          <label for="recipient-name" class="col-form-label">region street postal code</label>
-                          <input type="text" class="form-control" id="recipient-name" name="regionstreetpostalcode">
+                          <label for="recipient-name" class="col-form-label">region code</label>
+                          <input type="text" class="form-control" id="recipient-name" name="regionstreetpostalcode" required pattern="[A-Za-z]{1,2}">
                       </div>
                       <div class="form-group">
                           <button type="submit" class="btn btn-primary">submit</button>
@@ -519,8 +519,8 @@
                           <input type="text" class="form-control" id="regionnameEdit" name="regionname">
                       </div>
                       <div class="form-group">
-                          <label for="regionstreetpostalcodeEdit" class="col-form-label">region street postal code</label>
-                          <input type="text" class="form-control" id="regionstreetpostalcodeEdit" name="regionstreetpostalcode">
+                          <label for="regionstreetpostalcodeEdit" class="col-form-label">region code</label>
+                          <input type="text" class="form-control" id="regionstreetpostalcodeEdit" name="regionstreetpostalcode" required pattern="[A-Za-z]{2}">
                       </div>
                       <div class="form-group">
                           <button type="submit" class="btn btn-primary">submit</button>
