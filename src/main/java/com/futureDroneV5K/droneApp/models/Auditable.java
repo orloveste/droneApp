@@ -10,7 +10,6 @@ import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 
-
 import java.util.Date;
 
 import static javax.persistence.TemporalType.TIMESTAMP;
@@ -26,7 +25,7 @@ public abstract class Auditable <U>{
     @LastModifiedBy
     protected U lastUpdateBy;
     @LastModifiedDate
-    @Temporal(TIMESTAMP)
+    @Temporal(TIMESTAMP) //toDo local time for timestamp
     protected Date lastUpdateOn;
 
     public U getCreatedBy() {

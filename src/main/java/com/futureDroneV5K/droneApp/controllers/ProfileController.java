@@ -1,6 +1,7 @@
 package com.futureDroneV5K.droneApp.controllers;
 
 import com.futureDroneV5K.droneApp.services.ClientService;
+import com.futureDroneV5K.droneApp.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,11 +20,11 @@ public class ProfileController {
         model.addAttribute("client", clientService.findByUsername(un*//*, id*//*));
         return "profile";
     }*/
-
+    @Autowired private UserService userService;
     @RequestMapping(value = "/profile")
     public  String profile(Model model, Principal principal){
-//        String un = principal.getName();
-//        model.addAttribute("client", clientService.findByUsername(un*//*, id*//*));
+        String un = principal.getName();
+        model.addAttribute("user", userService.findByUsername(un));
         return "profile";
     }
 }

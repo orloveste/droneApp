@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -48,7 +48,7 @@
       </div>
 
       <!--logo start-->
-      <a href="index.html" class="logo">Nice <span class="lite">Admin</span></a>
+      <a href="index.html" class="logo">Drone <span class="lite">Service</span></a>
       <!--logo end-->
 
       <div class="nav search-row" id="top_menu">
@@ -308,78 +308,99 @@
     <aside>
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
-        <ul class="sidebar-menu">
-          <li class="active">
-            <a class="" href="index.html">
-                          <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
-                      </a>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_document_alt"></i>
-                          <span>Forms</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="form_component.html">Form Elements</a></li>
-              <li><a class="" href="form_validation.html">Form Validation</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_desktop"></i>
-                          <span>UI Fitures</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="general.html">Components</a></li>
-              <li><a class="" href="buttons.html">Buttons</a></li>
-              <li><a class="" href="grids.html">Grids</a></li>
-            </ul>
-          </li>
-          <li>
-            <a class="" href="widgets.html">
-                          <i class="icon_genius"></i>
-                          <span>Widgets</span>
-                      </a>
-          </li>
-          <li>
-            <a class="" href="chart-chartjs.html">
-                          <i class="icon_piechart"></i>
-                          <span>Charts</span>
+          <ul class="sidebar-menu">
+              <li class="">
+                  <a class="" th:href="@{/index}">
+                      <i class="icon_house_alt"></i>
+                      <span>Home Page</span>
+                  </a>
+              </li>
+              <li class="sub-menu">
+                  <a href="javascript:" class="">
+                      <i class="icon_document_alt"></i>
+                      <span>Geografic</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" th:href="@{/cities}">City</a></li>
+                      <li><a class="" th:href="@{/regions}">Region</a></li>
+                      <li><a class="" th:href="@{/locations}">Location</a></li>
+                  </ul>
+              </li>
+              <li class="sub-menu">
+                  <a href="javascript:" class="">
+                      <i class="icon_desktop"></i>
+                      <span>Users</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                      <li class="sub-menu">
+                          <a href="javascript:" class="">
+                              <i class="icon_wallet"></i>
+                              <span>Administrative</span>
+                              <span class="cke_menuarrow arrow_carrot-down_alt2"></span>
+                          </a>
+                          <ul class="sub">
+                              <li><a class="" th:href="@{/clients}">TypeTest</a></li>
+                              <li><a class="" th:href="@{/users}">RoleTest</a></li>
+                              <li><a class="" th:href="@{/administratives}">Administrative</a></li>
+                          </ul>
+                      </li>
+                      <li><a class="" th:href="@{/clients}">Client</a></li>
+                      <li><a class="" th:href="@{/users}">User</a></li>
+                      <li><a class="" th:href="@{/admins}">Admin</a></li>
+                      <li><a class="" th:href="@{/clients}">demo Client</a></li>
+                      <li><a class="" th:href="@{/users}">demo User</a></li>
+                      <li><a class="" th:href="@{/admins}">demo Admin</a></li>
+                  </ul>
+              </li>
+              <li class="sub-menu">
+                  <a href="javascript:" class="">
+                      <i class="icon_table"></i>
+                      <span>DroneService</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="/drones">Drone</a></li>
+                      <li><a class="" href="/droneTypes">Drone Types</a></li>
+                      <li><a class="" href="/droneTrackers">Drone Tracker</a></li>
+                      <li><a class="" th:href="@{/invoices}">Invoices</a></li>
+                      <li><a class="" th:href="@{/orders}">Orders</a></li>
+                  </ul>
+              </li>
+              <li>
+                  <a class="" href="widgets.html">
+                      <i class="icon_genius"></i>
+                      <span>Contact us</span>
+                  </a>
+              </li>
+              <li>
+                  <a class="" href="chart-chartjs.html">
+                      <i class="icon_piechart"></i>
+                      <span>Statistics</span>
 
-                      </a>
+                  </a>
 
-          </li>
+              </li>
 
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_table"></i>
-                          <span>Tables</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="basic_table.html">Basic Table</a></li>
-            </ul>
-          </li>
 
-          <li class="sub-menu">
-            <a href="javascript:;" class="">
-                          <i class="icon_documents_alt"></i>
-                          <span>Pages</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="profile.html">Profile</a></li>
-              <li><a class="" href="login.html"><span>Login Page</span></a></li>
-              <li><a class="" href="contact.html"><span>Contact Page</span></a></li>
-              <li><a class="" href="blank.html">Blank Page</a></li>
-              <li><a class="" href="404.html">404 Error</a></li>
-            </ul>
-          </li>
 
-        </ul>
+              <li class="sub-menu ">
+                  <a href="javascript:" class="">
+                      <i class="icon_documents_alt"></i>
+                      <span>Related Pages</span>
+                      <span class="menu-arrow arrow_carrot-right"></span>
+                  </a>
+                  <ul class="sub">
+                      <li><a class="" href="/profile">Profile</a></li>
+                      <li><a class="" href="/login"><span>Login Page</span></a></li>
+                      <li><a class="" th:href="@{/contacts}"><span>Contact Page</span></a></li>
+                      <li><a class="active" href="/contacts">test contacts</a></li>
+                      <li><a class="" href="/404">404 Error</a></li>
+                  </ul>
+              </li>
+
+          </ul>
         <!-- sidebar menu end-->
       </div>
     </aside>
@@ -415,9 +436,15 @@
                   <p>@jenifersmith</p>
                   <p><i class="fa fa-twitter">jenifertweet</i></p>
                   <h6>
-                                    <span><i class="icon_clock_alt"></i>11:05 AM</span>
-                                    <span><i class="icon_calendar"></i>25.10.13</span>
-                                    <span><i class="icon_pin_alt"></i>NY</span>
+                                    <span><i class="icon_clock_alt"></i>
+                                    <span th:text="${#dates.format(#dates.createNow(), 'HH:mm')}"></span>
+                                    </span>
+                                    <span><i class="icon_calendar"></i>
+                                    <span th:text="${#dates.format(#dates.createNow(), 'dd-MMM-YYYY')}"></span>
+                                    </span>
+                                    <span><i class="icon_pin_alt"></i>
+
+                                    </span>
                                 </h6>
                 </div>
                 <div class="col-lg-2 col-sm-6 follow-info weather-category">
