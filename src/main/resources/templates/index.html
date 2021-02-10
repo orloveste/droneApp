@@ -338,18 +338,6 @@
               <span class="menu-arrow arrow_carrot-right"></span>
             </a>
             <ul class="sub">
-              <li class="sub-menu">
-                <a href="javascript:" class="">
-                  <i class="icon_wallet"></i>
-                  <span>Administrative</span>
-                  <span class="cke_menuarrow arrow_carrot-down_alt2"></span>
-                </a>
-                <ul class="sub">
-                  <li><a class="" th:href="@{/clients}">TypeTest</a></li>
-                  <li><a class="" th:href="@{/users}">RoleTest</a></li>
-                  <li><a class="" th:href="@{/administratives}">Administrative</a></li>
-                </ul>
-              </li>
               <li><a class="" th:href="@{/clients}">Client</a></li>
               <li><a class="" th:href="@{/users}">User</a></li>
               <li><a class="" th:href="@{/admins}">Admin</a></li>
@@ -365,26 +353,25 @@
               <span class="menu-arrow arrow_carrot-right"></span>
             </a>
             <ul class="sub">
-              <li><a class="" href="/drones">Drone</a></li>
-              <li><a class="" href="/droneTypes">Drone Types</a></li>
-              <li><a class="" href="/droneTrackers">Drone Tracker</a></li>
+              <li><a class="" th:href="@{/drones}">Drone</a></li>
+              <li><a class="" th:href="@{/droneTypes}">Drone Types</a></li>
+              <li><a class="" th:href="@{/droneTrackers}">Drone Tracker</a></li>
               <li><a class="" th:href="@{/invoices}">Invoices</a></li>
               <li><a class="" th:href="@{/orders}">Orders</a></li>
             </ul>
           </li>
-          <li>
-            <a class="" href="widgets.html">
-              <i class="icon_genius"></i>
-              <span>Contact us</span>
-            </a>
-          </li>
-          <li>
-            <a class="" href="chart-chartjs.html">
-              <i class="icon_piechart"></i>
-              <span>Statistics</span>
 
+          <li class="sub-menu">
+            <a href="javascript:" class="">
+              <i class="icon_wallet"></i>
+              <span>Administrative</span>
+              <span class="menu-arrow arrow_carrot-right"></span>
             </a>
-
+            <ul class="sub">
+              <li><a class="" th:href="@{/clients}">TypeTest</a></li>
+              <li><a class="" th:href="@{/users}">RoleTest</a></li>
+              <li><a class="" th:href="@{/administratives}">Administrative</a></li>
+            </ul>
           </li>
 
 
@@ -396,11 +383,11 @@
               <span class="menu-arrow arrow_carrot-right"></span>
             </a>
             <ul class="sub">
-              <li><a class="" href="/profile">Profile</a></li>
+              <li><a class="" th:href="@{/profile}">Profile</a></li>
               <li><a class="" href="/login"><span>Login Page</span></a></li>
               <li><a class="" th:href="@{/contacts}"><span>Contact Page</span></a></li>
-              <li><a class="active" href="/contacts">test contacts</a></li>
-              <li><a class="" href="/404">404 Error</a></li>
+              <li><a class="active" th:href="@{/contacts}">test contacts</a></li>
+              <li><a class="" th:href="@{/404}">404 Error</a></li>
             </ul>
           </li>
 
@@ -416,24 +403,24 @@
         <!--overview start-->
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
+            <h3 class="page-header"><i class="fa fa-laptop"></i>Front Page</h3>
             <ol class="breadcrumb">
-              <li><i class="fa fa-home"></i><a href="/index">Home Page</a></li>
+              <li><i class="fa fa-home"></i><a th:href="@{/index}">Home Page</a></li>
 <!--              <li><i class="fa fa-laptop"></i>Dashboard</li>-->
             </ol>
           </div>
         </div>
 
-        <div class="row">
+        <!--<div class="row">
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box blue-bg">
               <i class="fa fa-cloud-download"></i>
               <div class="count">6.674</div>
               <div class="title">Download</div>
             </div>
-            <!--/.info-box-->
+            &lt;!&ndash;/.info-box&ndash;&gt;
           </div>
-          <!--/.col-->
+          &lt;!&ndash;/.col&ndash;&gt;
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box brown-bg">
@@ -441,9 +428,9 @@
               <div class="count">7.538</div>
               <div class="title">Purchased</div>
             </div>
-            <!--/.info-box-->
+            &lt;!&ndash;/.info-box&ndash;&gt;
           </div>
-          <!--/.col-->
+          &lt;!&ndash;/.col&ndash;&gt;
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box dark-bg">
@@ -451,9 +438,9 @@
               <div class="count">4.362</div>
               <div class="title">Order</div>
             </div>
-            <!--/.info-box-->
+            &lt;!&ndash;/.info-box&ndash;&gt;
           </div>
-          <!--/.col-->
+          &lt;!&ndash;/.col&ndash;&gt;
 
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <div class="info-box green-bg">
@@ -461,11 +448,11 @@
               <div class="count">1.426</div>
               <div class="title">Stock</div>
             </div>
-            <!--/.info-box-->
+            &lt;!&ndash;/.info-box&ndash;&gt;
           </div>
-          <!--/.col-->
+          &lt;!&ndash;/.col&ndash;&gt;
 
-        </div>
+        </div>-->
         <!--/.row-->
 
 
@@ -474,12 +461,7 @@
 
             <div class="panel panel-default">
               <div class="panel-heading">
-                <h2><i class="fa fa-map-marker red"></i><strong>Countries</strong></h2>
-                <div class="panel-actions">
-                  <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-                  <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-                  <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
-                </div>
+                <h2><i class="fa fa-magic red"></i><strong>Welcome and enjoy new experience</strong></h2>
               </div>
               <div>
                 <div style="background-image: url('img/bg-intermediate.jpg'); background-size: 100% 100%; height: 400px;"></div>
@@ -495,23 +477,23 @@
                 <!-- Graph -->
                 <div><span id="todayspark1" class="spark"></span></div>
                 <!-- Text -->
-                <div class="datas-text">11,500 visitors/day</div>
+                <a href="https://github.com/orloveste/droneApp/issues" target="_blank" rel="noopener noreferrer"><i class="icon_key_alt"></i>App issues</a>
               </li>
               <li>
                 <div><span id="todayspark2" class="spark"></span></div>
-                <div class="datas-text">15,000 Pageviews</div>
+                <div class="datas-text">in 2023 51 drone centers </div>
               </li>
               <li>
                 <div><span id="todayspark3" class="spark"></span></div>
-                <div class="datas-text">30.55% Bounce Rate</div>
+                <div class="datas-text">in 2023 155% bigger bussines</div>
               </li>
               <li>
                 <div><span id="todayspark4" class="spark"></span></div>
-                <div class="datas-text">$16,00 Revenue/Day</div>
+                <div class="datas-text">&euro; 16100,00 Revenue/Day</div>
               </li>
               <li>
                 <div><span id="todayspark5" class="spark"></span></div>
-                <div class="datas-text">12,000000 visitors every Month</div>
+                <div class="datas-text">686 visitors every Month</div>
               </li>
             </ul>
           </div>
@@ -531,41 +513,41 @@
               <div class="panel-heading">
                 <h2><i class="fa fa-flag-o red"></i><strong>Registered Users</strong></h2>
                 <div class="panel-actions">
-                  <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-                  <a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-                  <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
+<!--                  <a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>-->
+                  <a th:href="@{/index}" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+<!--                  <a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>-->
                 </div>
               </div>
               <div class="panel-body">
                 <table class="table bootstrap-datatable countries">
                   <thead>
                     <tr>
-                      <th></th>
-                      <th>Country</th>
+                      <th>id</th>
+                      <th>City</th>
                       <th>Users</th>
-                      <th>Online</th>
-                      <th>Performance</th>
+                      <th>Orders</th>
+                      <th>Successful deliveries</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Germany</td>
-                      <td>2563</td>
+                      <td><!--<img src="img/Germany.png" style="height:18px; margin-top:-2px;">-->1</td>
+                      <td>Bucharest</td>
+                      <td>563</td>
                       <td>1025</td>
                       <td>
                         <div class="progress thin">
-                          <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style="width: 73%">
+                          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style="width: 93%">
                           </div>
-                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" style="width: 27%">
+                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" style="width: 7%">
                           </div>
                         </div>
-                        <span class="sr-only">73%</span>
+                        <span class="sr-only">93%</span>
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/India.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>India</td>
+                      <td><!--<img src="img/India.png" style="height:18px; margin-top:-2px;">-->2</td>
+                      <td>Brasov</td>
                       <td>3652</td>
                       <td>2563</td>
                       <td>
@@ -579,8 +561,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Spain.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Spain</td>
+                      <td><!--<img src="img/Spain.png" style="height:18px; margin-top:-2px;">-->3</td>
+                      <td>Cluj</td>
                       <td>562</td>
                       <td>452</td>
                       <td>
@@ -594,8 +576,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/India.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Russia</td>
+                      <td><!--<img src="img/India.png" style="height:18px; margin-top:-2px;">-->4</td>
+                      <td>Constanta</td>
                       <td>1258</td>
                       <td>958</td>
                       <td>
@@ -609,8 +591,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Spain.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>USA</td>
+                      <td><!--<img src="img/Spain.png" style="height:18px; margin-top:-2px;">-->5</td>
+                      <td>Pitesti</td>
                       <td>4856</td>
                       <td>3621</td>
                       <td>
@@ -624,8 +606,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Brazil</td>
+                      <td><!--<img src="img/Germany.png" style="height:18px; margin-top:-2px;">-->6</td>
+                      <td>Craiova</td>
                       <td>265</td>
                       <td>102</td>
                       <td>
@@ -639,8 +621,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>Coloumbia</td>
+                      <td><!--<img src="img/Germany.png" style="height:18px; margin-top:-2px;">-->12</td>
+                      <td>Iasi</td>
                       <td>265</td>
                       <td>102</td>
                       <td>
@@ -654,8 +636,8 @@
                       </td>
                     </tr>
                     <tr>
-                      <td><img src="img/Germany.png" style="height:18px; margin-top:-2px;"></td>
-                      <td>France</td>
+                      <td><!--<img src="img/Germany.png" style="height:18px; margin-top:-2px;">-->212</td>
+                      <td>Faurei</td>
                       <td>265</td>
                       <td>102</td>
                       <td>
@@ -678,17 +660,20 @@
           <!--/col-->
           <div class="col-md-3">
 
-            <div class="social-box facebook">
-              <i class="fa fa-facebook"></i>
+            <div class="social-box linkedin">
+              <a href="https://www.linkedin.com/in/orlov-eugeniu/" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-linkedin"></i>
+              </a>
               <ul>
                 <li>
-                  <strong>256k</strong>
-                  <span>friends</span>
+                  <a href="https://www.linkedin.com/posts/orlov-eugeniu_transportation-aviation-travel-activity-6764605347391971328-tt7A" target="_blank" rel="noopener noreferrer">
+                    <span>
+                      <strong>UK drone station</strong>
+                    </span>
+                  </a>
+
                 </li>
-                <li>
-                  <strong>359</strong>
-                  <span>feeds</span>
-                </li>
+
               </ul>
             </div>
             <!--/social-box-->
