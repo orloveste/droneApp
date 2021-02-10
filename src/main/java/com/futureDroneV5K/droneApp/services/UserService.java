@@ -14,9 +14,11 @@ public class UserService {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired
     private UserRepository userRepository;
+
     public List<User> getUsers() {
         return userRepository.findAll();
     }
+
     public void saveUser(User user){
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.saveAndFlush(user);

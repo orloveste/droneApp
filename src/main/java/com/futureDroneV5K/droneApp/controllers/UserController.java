@@ -31,7 +31,7 @@ public class UserController {
     public RedirectView addNew(User user, RedirectAttributes redirectAttributes){
         userService.saveUser(user);
         RedirectView redirectView = new RedirectView("/login", true);
-        redirectAttributes.addFlashAttribute("message", "Login now, registred!");
+        redirectAttributes.addFlashAttribute("message", "Login now, registered!");
         return redirectView;
     }
 

@@ -33,7 +33,7 @@ public class AdministrativeController {
         model.addAttribute("cities", cityService.getCities());
         model.addAttribute("regions", regionService.getRegions());
 
-        return "/administrative";
+        return "administrative";
     }
     @PostMapping("/administratives/addNew")
     public String addNew(Administrative administrative){
@@ -57,4 +57,11 @@ public class AdministrativeController {
         administrativeService.delete(id);
         return "redirect:/administratives";
     }
+    // assign administrative username
+    @RequestMapping(value = "/administratives/assignUsername")
+    public String assignUsername(Long id){
+        administrativeService.assignUsername(id);
+        return "redirect:/administratives";
+    }
+
 }
