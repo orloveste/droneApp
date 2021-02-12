@@ -20,8 +20,8 @@
   <link href="css/elegant-icons-style.css" rel="stylesheet" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
   <!-- full calendar css-->
-  <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
-  <link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+<!--  <link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />-->
+<!--  <link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />-->
   <!-- easy pie chart-->
   <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
   <!-- owl carousel -->
@@ -310,7 +310,7 @@
 
     <!--sidebar start-->
     <aside>
-      <div id="sidebar" class="nav-collapse ">
+      <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
           <li class="">
@@ -340,10 +340,6 @@
             <ul class="sub">
               <li><a class="" th:href="@{/clients}">Client</a></li>
               <li><a class="" th:href="@{/users}">User</a></li>
-              <li><a class="" th:href="@{/admins}">Admin</a></li>
-              <li><a class="" th:href="@{/clients}">demo Client</a></li>
-              <li><a class="" th:href="@{/users}">demo User</a></li>
-              <li><a class="" th:href="@{/admins}">demo Admin</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -368,13 +364,13 @@
               <span class="menu-arrow arrow_carrot-right"></span>
             </a>
             <ul class="sub">
-              <li><a class="" th:href="@{/clients}">TypeTest</a></li>
-              <li><a class="" th:href="@{/users}">RoleTest</a></li>
               <li><a class="" th:href="@{/administratives}">Administrative</a></li>
+              <li><a class="" th:href="@{/#}"></a></li>
+              <li><a class="" th:href="@{/#}">Types</a></li>
+              <li><a class="" th:href="@{/#}">Roles</a></li>
+
             </ul>
           </li>
-
-
 
           <li class="sub-menu ">
             <a href="javascript:" class="">
@@ -385,12 +381,9 @@
             <ul class="sub">
               <li><a class="" th:href="@{/profile}">Profile</a></li>
               <li><a class="" href="/login"><span>Login Page</span></a></li>
-              <li><a class="" th:href="@{/contacts}"><span>Contact Page</span></a></li>
               <li><a class="active" th:href="@{/contacts}">test contacts</a></li>
-              <li><a class="" th:href="@{/404}">404 Error</a></li>
             </ul>
           </li>
-
         </ul>
         <!-- sidebar menu end-->
       </div>
@@ -680,7 +673,7 @@
           </div>
           <div class="col-md-3">
 
-            <div class="social-box google-plus">
+            <!--<div class="social-box google-plus">
               <i class="fa fa-google-plus"></i>
               <ul>
                 <li>
@@ -692,12 +685,12 @@
                   <span>circles</span>
                 </li>
               </ul>
-            </div>
+            </div>-->
             <!--/social-box-->
 
           </div>
           <!--/col-->
-          <div class="col-md-3">
+          <!--<div class="col-md-3">
 
             <div class="social-box twitter">
               <i class="fa fa-twitter"></i>
@@ -711,7 +704,7 @@
                   <span>tweets</span>
                 </li>
               </ul>
-            </div>
+            </div>-->
             <!--/social-box-->
 
           </div>
@@ -727,9 +720,9 @@
 
 
         <!-- project team & activity start -->
-        <div class="row">
+        <!--<div class="row">
           <div class="col-md-4 portlets">
-            <!-- Widget -->
+            &lt;!&ndash; Widget &ndash;&gt;
             <div class="panel panel-default">
               <div class="panel-heading">
                 <div class="pull-left">Message</div>
@@ -741,35 +734,35 @@
               </div>
 
               <div class="panel-body">
-                <!-- Widget content -->
+                &lt;!&ndash; Widget content &ndash;&gt;
                 <div class="padd sscroll">
 
                   <ul class="chats">
 
-                    <!-- Chat by us. Use the class "by-me". -->
+                    &lt;!&ndash; Chat by us. Use the class "by-me". &ndash;&gt;
                     <li class="by-me">
-                      <!-- Use the class "pull-left" in avatar -->
+                      &lt;!&ndash; Use the class "pull-left" in avatar &ndash;&gt;
                       <div class="avatar pull-left">
                         <img src="img/user.jpg" alt="" />
                       </div>
 
                       <div class="chat-content">
-                        <!-- In meta area, first include "name" and then "time" -->
+                        &lt;!&ndash; In meta area, first include "name" and then "time" &ndash;&gt;
                         <div class="chat-meta">John Smith <span class="pull-right">3 hours ago</span></div>
                         Vivamus diam elit diam, consectetur dapibus adipiscing elit.
                         <div class="clearfix"></div>
                       </div>
                     </li>
 
-                    <!-- Chat by other. Use the class "by-other". -->
+                    &lt;!&ndash; Chat by other. Use the class "by-other". &ndash;&gt;
                     <li class="by-other">
-                      <!-- Use the class "pull-right" in avatar -->
+                      &lt;!&ndash; Use the class "pull-right" in avatar &ndash;&gt;
                       <div class="avatar pull-right">
                         <img src="img/user22.png" alt="" />
                       </div>
 
                       <div class="chat-content">
-                        <!-- In the chat meta, first include "time" then "name" -->
+                        &lt;!&ndash; In the chat meta, first include "time" then "name" &ndash;&gt;
                         <div class="chat-meta">3 hours ago <span class="pull-right">Jenifer Smith</span></div>
                         Vivamus diam elit diam, consectetur fconsectetur dapibus adipiscing elit.
                         <div class="clearfix"></div>
@@ -789,13 +782,13 @@
                     </li>
 
                     <li class="by-other">
-                      <!-- Use the class "pull-right" in avatar -->
+                      &lt;!&ndash; Use the class "pull-right" in avatar &ndash;&gt;
                       <div class="avatar pull-right">
                         <img src="img/user22.png" alt="" />
                       </div>
 
                       <div class="chat-content">
-                        <!-- In the chat meta, first include "time" then "name" -->
+                        &lt;!&ndash; In the chat meta, first include "time" then "name" &ndash;&gt;
                         <div class="chat-meta">3 hours ago <span class="pull-right">Jenifer Smith</span></div>
                         Vivamus diam elit diam, consectetur fermentum sed dapibus eget, Vivamus consectetur dapibus adipiscing elit.
                         <div class="clearfix"></div>
@@ -805,7 +798,7 @@
                   </ul>
 
                 </div>
-                <!-- Widget footer -->
+                &lt;!&ndash; Widget footer &ndash;&gt;
                 <div class="widget-foot">
 
                   <form class="form-inline">
@@ -826,7 +819,7 @@
           </div>
 
           <div class="col-lg-8">
-            <!--Project Activity start-->
+            &lt;!&ndash;Project Activity start&ndash;&gt;
             <section class="panel">
               <div class="panel-body progress-panel">
                 <div class="row">
@@ -948,7 +941,7 @@
                 </tbody>
               </table>
             </section>
-            <!--Project Activity end-->
+            &lt;!&ndash;Project Activity end&ndash;&gt;
           </div>
         </div><br><br>
 
@@ -964,9 +957,9 @@
 
               </div><br><br><br>
               <div class="panel-body">
-                <!-- Widget content -->
+                &lt;!&ndash; Widget content &ndash;&gt;
 
-                <!-- Below line produces calendar. I am using FullCalendar plugin. -->
+                &lt;!&ndash; Below line produces calendar. I am using FullCalendar plugin. &ndash;&gt;
                 <div id="calendar"></div>
 
               </div>
@@ -988,23 +981,23 @@
                 <div class="padd">
 
                   <div class="form quick-post">
-                    <!-- Edit profile form (not working)-->
+                    &lt;!&ndash; Edit profile form (not working)&ndash;&gt;
                     <form class="form-horizontal">
-                      <!-- Title -->
+                      &lt;!&ndash; Title &ndash;&gt;
                       <div class="form-group">
                         <label class="control-label col-lg-2" for="title">Title</label>
                         <div class="col-lg-10">
                           <input type="text" class="form-control" id="title">
                         </div>
                       </div>
-                      <!-- Content -->
+                      &lt;!&ndash; Content &ndash;&gt;
                       <div class="form-group">
                         <label class="control-label col-lg-2" for="content">Content</label>
                         <div class="col-lg-10">
                           <textarea class="form-control" id="content"></textarea>
                         </div>
                       </div>
-                      <!-- Cateogry -->
+                      &lt;!&ndash; Cateogry &ndash;&gt;
                       <div class="form-group">
                         <label class="control-label col-lg-2">Category</label>
                         <div class="col-lg-10">
@@ -1019,7 +1012,7 @@
                           </label>
                         </div>
                       </div>
-                      <!-- Tags -->
+                      &lt;!&ndash; Tags &ndash;&gt;
                       <div class="form-group">
                         <label class="control-label col-lg-2" for="tags">Tags</label>
                         <div class="col-lg-10">
@@ -1027,9 +1020,9 @@
                         </div>
                       </div>
 
-                      <!-- Buttons -->
+                      &lt;!&ndash; Buttons &ndash;&gt;
                       <div class="form-group">
-                        <!-- Buttons -->
+                        &lt;!&ndash; Buttons &ndash;&gt;
                         <div class="col-lg-offset-2 col-lg-9">
                           <button type="submit" class="btn btn-primary">Publish</button>
                           <button type="submit" class="btn btn-danger">Save Draft</button>
@@ -1042,14 +1035,14 @@
 
                 </div>
                 <div class="widget-foot">
-                  <!-- Footer goes here -->
+                  &lt;!&ndash; Footer goes here &ndash;&gt;
                 </div>
               </div>
             </div>
 
           </div>
 
-        </div>
+        </div>-->
         <!-- project team & activity end -->
 
       </section>
@@ -1148,7 +1141,7 @@
               normalizeFunction: 'polynomial'
             }]
           },
-          backgroundColor: '#eef3f7',
+          backgroundColor: '#dce5ec',
           onLabelShow: function(e, el, code) {
             el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
           }
