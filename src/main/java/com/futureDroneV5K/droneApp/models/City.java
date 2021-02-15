@@ -1,5 +1,4 @@
 package com.futureDroneV5K.droneApp.models;
-
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
@@ -8,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
-
 @Entity
 @Data
 @NoArgsConstructor

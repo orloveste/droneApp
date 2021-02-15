@@ -43,7 +43,6 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();
     }
-
     @Autowired
     private UserDetailsService userDetailsService;
 //    DAO

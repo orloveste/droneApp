@@ -19,7 +19,6 @@ public class Drone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "droneid")
     private Long droneid;
-
     private String dronename;
 
     @OneToMany(mappedBy = "drone")
@@ -27,5 +26,4 @@ public class Drone {
 
     @OneToMany(mappedBy = "drone")
     private List<OrderCustom> orderList;
-
 }

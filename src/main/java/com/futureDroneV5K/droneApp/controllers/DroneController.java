@@ -19,7 +19,6 @@ public class DroneController {
     @GetMapping("/drones")
     public String getDrones(Model model){
         model.addAttribute("drones", droneService.getDrones());
-
         return "drone";
     }
     @PostMapping("/drones/addNew")
